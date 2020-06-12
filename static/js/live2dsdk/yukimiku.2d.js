@@ -1,11 +1,11 @@
 // default parameters
-var canvasSize = 1024,
+var canvasSize = 600,
     modelName = 'c417_02',
     modelScale = 1.0,
     modelX = 0.0,
     modelY = 0.0,
     motionIdle = null, motionClick = null,
-    canvasWidth = 1024, canvasHeight = 1024
+    canvasWidth = 600, canvasHeight = 600
 
 function totsugeki() {
   if(motionMgr !== null && motionClick !== null) {
