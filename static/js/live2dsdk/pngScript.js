@@ -1,8 +1,6 @@
 var modelName = 'c417_02';
 
 var shots = [];
-var grabLimit = 100; // total number of capture;
-var grabRate = 30; // millisecond;
 var count = 0;
 
 function sleep (delay) {
@@ -16,7 +14,7 @@ function pad(n, width, z) {
   return n.length >= width ? n : new Array(width - n.length + 1).join(z) + n;
 }
 
-function getResults() {
+function getResults(grabLimit, grabRate) {
   var zip = new JSZip();
   var searchParams = (new URL(window.location.href)).searchParams;
   var childName = searchParams.get('mN') || modelName;
@@ -34,10 +32,13 @@ function getResults() {
 }
 
 function getFrameHQLS(mtn) {
-  if (mtn == 'attack')
-    motionMgr.startMotion(motionClick);
-  else
+  if (mtn == 'idle')
     motionMgr.startMotion(motionIdle);
+  else if (mtn == 'hit')
+    motionMgr.startMotion(motionHit);
+  else
+    motionMgr.startMotion(motionClick);
+
   setTimeout(function() {
     var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
     var img = window.atob(encodedImg);
@@ -56,21 +57,80 @@ function getPNGsHQLS(grabLimit, grabRate, mtn) {
     accTime = accTime + interval;
     setTimeout(function(){getFrameHQLS(mtn);}, accTime);
   };
-  setTimeout(function(){getResults();}, accTime + grabLimit * grabRate + 1000);
+  setTimeout(function(){getResults(grabLimit, grabRate);}, accTime + grabLimit * grabRate + 1000);
 };
 
 function getPNGsLQHS(grabLimit, grabRate, mtn) {
   shots = [];
   count = 0;
 
-  if (mtn == 'attack')
-    motionMgr.startMotion(motionClick);
-  else
+  if (mtn == 'idle')
     motionMgr.startMotion(motionIdle);
+  else if (mtn == 'hit')
+    motionMgr.startMotion(motionHit);
+  else
+    motionMgr.startMotion(motionClick);
+
   var grabber = setInterval(function(){
     if (count > grabLimit) {
       clearInterval(grabber);
-      getResults();
+      getResults(grabLimit, grabRate);
+    }
+    var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
+    var img = window.atob(encodedImg);
+    shots.push(img);
+    count++;
+  }, grabRate);
+};
+
+function getFrameSpaHQLS(mtn) {
+  if (mtn == 'idle')
+    motionMgr.startMotion(motionIdle);
+  else if (mtn == 'max')
+    motionMgr.startMotion(motionMax);
+  else if (mtn == 'maxtouch')
+    motionMgr.startMotion(motionMaxtouch);
+  else
+    motionMgr.startMotion(motionClick);
+
+  setTimeout(function() {
+    var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
+    var img = window.atob(encodedImg);
+    shots.push(img);
+  }, count * grabRate);
+  count++;
+};
+
+function getPNGsSpaHQLS(grabLimit, grabRate, mtn) {
+  var accTime = 0;
+  shots = [];
+  count = 0;
+
+  for (var i = 0; i <= grabLimit; i++) {
+    var interval = i * grabRate + 500;
+    accTime = accTime + interval;
+    setTimeout(function(){getFrameSpaHQLS(mtn);}, accTime);
+  };
+  setTimeout(function(){getResults(grabLimit, grabRate);}, accTime + grabLimit * grabRate + 1000);
+};
+
+function getPNGsSpaLQHS(grabLimit, grabRate, mtn) {
+  shots = [];
+  count = 0;
+
+  if (mtn == 'idle')
+    motionMgr.startMotion(motionIdle);
+  else if (mtn == 'max')
+    motionMgr.startMotion(motionMax);
+  else if (mtn == 'maxtouch')
+    motionMgr.startMotion(motionMaxtouch);
+  else
+    motionMgr.startMotion(motionClick);
+
+  var grabber = setInterval(function(){
+    if (count > grabLimit) {
+      clearInterval(grabber);
+      getResults(grabLimit, grabRate);
     }
     var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
     var img = window.atob(encodedImg);

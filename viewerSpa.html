@@ -35,7 +35,7 @@
             let canvas = document.getElementById("canvas");
     </script>
 
-    <div>mN   : <input id="mN" type="text" name="mN" autofocus=true></div>
+    <div>mN   : <input id="mN" type="text" name="mN" autofocus=true> Spa file? <input id="isSpa" type="checkbox" name="isSpa"></div>
     <div>width : <input id="width" type="number" name="width"></div>
     <div>height : <input id="height" type="number" name="height"></div>
     <div>mS   : <input id="mS" type="number" name="mS"></div>
@@ -44,9 +44,9 @@
 
     <script>
       var searchParams = (new URL(window.location.href)).searchParams;
-      document.getElementById('mN').value = searchParams.get('mN') || 'c417_02';
-      document.getElementById('width').value = searchParams.get('width') || 1024;
-      document.getElementById('height').value = searchParams.get('height') || 1024;
+      document.getElementById('mN').value = searchParams.get('mN') || 'sc417_01';
+      document.getElementById('width').value = searchParams.get('width') || 600;
+      document.getElementById('height').value = searchParams.get('height') || 600;
       document.getElementById('mS').value = searchParams.get('mS') || 1;
       document.getElementById('mX').value = searchParams.get('mX') || 0;
       document.getElementById('mY').value = searchParams.get('mY') || 0;
@@ -61,6 +61,9 @@
         mX = document.getElementById('mX').value;
         mY = document.getElementById('mY').value;
         newLink = location.protocol + '//' + location.host + location.pathname;
+        if (document.getElementById('isSpa').checked == false) {
+          newLink = location.protocol + '//' + location.host + location.pathname.slice(0, -1 * 'viewerSpa.html'.length) + 'viewerKR.html';
+        }
         newLink = newLink + '?mN=' + mN + '&width=' + width + '&height=' + height + '&mS=' + mS + '&mX=' + mX + '&mY=' + mY;
         location.href = newLink;
       };
@@ -74,12 +77,16 @@
     <div>grabRate (ms) : <input id="grabRate" type="number" name="grabRate" value="30"></div>
 
     <div>
-      <button type="button" name="attackHQLS" onclick="javascript:getPNGsHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'attack');">get attack motion PNGs HQLS</button>
-      <button type="button" name="attackHQLS" onclick="javascript:getPNGsHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'idle');">get idle motion PNGs HQLS</button>
+      <button type="button" name="idleLQHS" onclick="javascript:getPNGsSpaLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'idle');">get idle motion PNGs High-Speed</button>
+      <button type="button" name="touchLQHS" onclick="javascript:getPNGsSpaLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'touch');">get touch motion PNGs High-Speed</button>
+      <button type="button" name="maxLQHS" onclick="javascript:getPNGsSpaLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'max');">get max motion PNGs High-Speed</button>
+      <button type="button" name="maxtouchLQHS" onclick="javascript:getPNGsSpaLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'maxtouch');">get maxtouch motion PNGs High-Speed</button>
     </div>
     <div>
-      <button type="button" name="attackLQHS" onclick="javascript:getPNGsLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'attack');">get attack motion PNGs LQHS</button>
-      <button type="button" name="attackLQHS" onclick="javascript:getPNGsLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'idle');">get idle motion PNGs LQHS</button>
+      <button type="button" name="idleHQLS" onclick="javascript:getPNGsSpaHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'idle');">get idle motion PNGs Low-Speed</button>
+      <button type="button" name="touchHQLS" onclick="javascript:getPNGsSpaHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'touch');">get touch motion PNGs Low-Speed</button>
+      <button type="button" name="maxHQLS" onclick="javascript:getPNGsSpaHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'max');">get max motion PNGs Low-Speed</button>
+      <button type="button" name="maxtouchHQLS" onclick="javascript:getPNGsSpaHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'maxtouch');">get maxtouch motion PNGs Low-Speed</button>
     </div>
 
   </body>
