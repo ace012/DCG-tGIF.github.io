@@ -72,6 +72,14 @@
     <div><button type="button" name="reload" onclick="javascript:reload();">Reload Child</button></div>
 
     <p></p>
+    <div>Motion Preview</div>
+    <div>
+      <button type="button" name="idlePreview" onclick="javascript:motionMgr.startMotion(motionIdle);">idle motion</button>
+      <button type="button" name="touchPreview" onclick="javascript:motionMgr.startMotion(motionClick);">touch motion</button>
+      <button type="button" name="maxPreview" onclick="javascript:motionMgr.startMotion(motionMax);">max motion</button>
+      <button type="button" name="maxtouchPreview" onclick="javascript:motionMgr.startMotion(motionMaxtouch);">maxtouch motion</button>
+    </div>
+    <p></p>
 
     <div>grabLimit     : <input id="grabLimit" type="number" name="grabLimit" value="100"></div>
     <div>grabRate (ms) : <input id="grabRate" type="number" name="grabRate" value="30"></div>
