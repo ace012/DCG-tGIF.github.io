@@ -23,6 +23,7 @@
 	<script src="static/js/live2dsdk/yukimiku.2d.js"></script>
 
   <script src="static/js/live2dsdk/pngScript.js"></script>
+  <script src="static/js/live2dsdk/customTexture.js"></script>
 
   <script type="text/javascript" src="static/jszip/dist/jszip.js"></script>
   <script type="text/javascript" src="static/jszip/test/jquery-1.8.3.min.js"></script>
@@ -70,6 +71,10 @@
     </script>
 
     <div><button type="button" name="reload" onclick="javascript:reload();">Reload Child</button></div>
+
+    <p></p>
+    <div>Choose custom texture files (If you want to use):</div>
+    <div><input type="file" id="textures" name="textures" accept="image/png" multiple onchange="handleFiles(this.files)"></div>
 
     <p></p>
     <div>Motion Preview</div>
