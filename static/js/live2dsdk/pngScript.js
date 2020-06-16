@@ -106,6 +106,11 @@ function getPNGsSpaHQLS(grabLimit, grabRate, mtn) {
   shots = [];
   count = 0;
 
+  if (mtn == 'max' || mtn == 'maxtouch')
+    switchSpa(true)
+  else
+    switchSpa(false)
+
   for (var i = 0; i <= grabLimit; i++) {
     var interval = i * grabRate + 500;
     accTime = accTime + interval;
@@ -117,6 +122,11 @@ function getPNGsSpaHQLS(grabLimit, grabRate, mtn) {
 function getPNGsSpaLQHS(grabLimit, grabRate, mtn) {
   shots = [];
   count = 0;
+
+  if (mtn == 'max' || mtn == 'maxtouch')
+    switchSpa(true)
+  else
+    switchSpa(false)
 
   if (mtn == 'idle')
     motionMgr.startMotion(motionIdle);
