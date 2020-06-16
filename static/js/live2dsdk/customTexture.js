@@ -2,61 +2,46 @@ function checkPowerOfTwo(number) {
   return (Math.log(number)/Math.log(2)) % 1 === 0;
 }
 
-function handleTextures(texture0, texture1, valid0, valid1) {
-  if (texture0 && !valid0) {
+function handleTextures(textures, index) {
+  if (index >= textures.length) {
+    initModelCustom('kr', textures)
+  }
+  else if (textures[index]) {
     var img = new Image();
-    img.src = texture0;
+    img.src = textures[index];
     img.onload = function() {
       if (!checkPowerOfTwo(img.width) ||
           !checkPowerOfTwo(img.height))
       {
-        alert("Load failed (texture_00.png): check size of your texture file")
-        handleTextures(null, texture1, valid0, valid1);
+        alert("Load failed (texture_0" + index + ".png): check size of your texture file")
+        textures[index] = null;
       }
-      else {
-        handleTextures(texture0, texture1, true, valid1);
-      }
+      handleTextures(textures, index + 1);
     }
   }
-  else if (texture1 && !valid1) {
-    var img = new Image();
-    img.src = texture1;
-    img.onload = function() {
-      if (!checkPowerOfTwo(img.width) ||
-          !checkPowerOfTwe(img.height))
-      {
-        alert("Load failed (texture_01.png): check size of your texture file")
-        handleTextures(texture0, null, valid0, vaild1);
-      }
-      else {
-        handleTextures(texture0, texture1, valid0, true);
-      }
-    }
-  }
-  else {
-    initModelCustom('kr', texture0, texture1);
-  }
+  else
+    handleTextures(textures, index + 1);
 }
 
 function handleFiles(files) {
   var reader = new FileReader();
   var img;
-  var texture0 = null, texture1 = null;
+  var textures = [null, null];
 
   function readFile(index) {
     if (index >= files.length) return;
     var file = files[index];
     reader.onload = function(e) {
       if (file.name == "texture_00.png")
-        texture0 = e.target.result;
+        textures[0] = e.target.result;
       else if (file.name == "texture_01.png")
-        texture1 = e.target.result;
+        textures[1] = e.target.result;
       else {
         alert("Load failed (" + file.name + "): file name must be texture_00.png or texture_01.png")
       }
-      readFile(index+1)
+      readFile(index + 1)
       if (index == files.length - 1) {
-        handleTextures(texture0, texture1, false, false);
+        handleTextures(textures, 0);
       }
     }
     reader.readAsDataURL(file);
@@ -64,7 +49,7 @@ function handleFiles(files) {
   readFile(0);
 }
 
-function initModelCustom(pathDir, texture0, texture1) {
+function initModelCustom(pathDir, textures) {
 	if (pathDir == 'kr'){
 		dir = "static/Korean/"
 	} else
@@ -90,11 +75,11 @@ function initModelCustom(pathDir, texture0, texture1) {
 
   loadBytes(getPath(dir, 'MOC.' + modelName + '.json'), 'text', function(buf) {
     var modelJson = JSON.parse(buf)
-    initLive2dCustom(dir, modelJson, texture0, texture1)
+    initLive2dCustom(dir, modelJson, textures)
   })
 }
 
-function initLive2dCustom(dir, model, texture0, texture1) {
+function initLive2dCustom(dir, model, textures) {
   // declare global variables
   this.live2DModel = null
   this.requestID = null
@@ -110,12 +95,12 @@ function initLive2dCustom(dir, model, texture0, texture1) {
 
   // the fun begins
   Live2D.init()
-  initCustom(dir, canvas, texture0, texture1)
+  initCustom(dir, canvas, textures)
 }
 
 
 
-function initCustom(dir, canvas, texture0, texture1) {
+function initCustom(dir, canvas, textures) {
   // try getting WebGl context
   var gl = getWebGLContext(canvas)
   if(!gl) {
@@ -140,10 +125,8 @@ function initCustom(dir, canvas, texture0, texture1) {
   for(var i = 0; i < modelJson.textures.length; i++) {
   // create new image
     loadedImages[i] = new Image()
-    if (i == 0 && texture0 != null)
-      loadedImages[i].src = texture0
-    else if (i == 1 && texture1 != null)
-      loadedImages[i].src = texture1
+    if (textures[i] != null)
+      loadedImages[i].src = textures[i]
     else
       loadedImages[i].src = getPath(dir, modelJson.textures[i])
     loadedImages[i].onload = function() {
