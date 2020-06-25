@@ -134,12 +134,17 @@ function init(dir, canvas) {
       motionClick._$dP = 0
 	  })
 
-    loadBytes(getPath(dir, modelJson.motions.hit[0].file), 'arraybuffer', function(buf) {
-      motionHit = new Live2DMotion.loadMotion(buf)
-      // remove fade in/out delay to make it smooth
-      motionHit._$eo = 0
-      motionHit._$dP = 0
-    })
+    if (modelJson.motions.hit) {
+      loadBytes(getPath(dir, modelJson.motions.hit[0].file), 'arraybuffer', function(buf) {
+        motionHit = new Live2DMotion.loadMotion(buf)
+        // remove fade in/out delay to make it smooth
+        motionHit._$eo = 0
+        motionHit._$dP = 0
+      })
+    }
+    else {
+      motionHit = motionClick
+    }
 
 /*    loadBytes(getPath(dir, modelJson.motions.banner[0].file), 'arraybuffer', function(buf) {
       motionClick = new Live2DMotion.loadMotion(buf)
