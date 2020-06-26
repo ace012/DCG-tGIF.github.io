@@ -42,6 +42,10 @@
       "file": "nonsense.exp.json"
     },
     {
+      "name": "pain",
+      "file": "pain.exp.json"
+    },
+    {
       "name": "pretense",
       "file": "pretense.exp.json"
     },
@@ -72,6 +76,14 @@
     {
       "name": "superangry",
       "file": "superangry.exp.json"
+    },
+    {
+      "name": "superfury",
+      "file": "superfury.exp.json"
+    },
+    {
+      "name": "surprise",
+      "file": "surprise.exp.json"
     },
     {
       "name": "unfair",
