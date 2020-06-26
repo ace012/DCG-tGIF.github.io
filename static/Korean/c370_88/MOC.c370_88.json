@@ -8,21 +8,21 @@
   "motions": {
     "attack": [
       {
-        "file": "c370_89_attack.mtn",
+        "file": "c370_88_attack.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
     ],
     "hit": [
       {
-        "file": "c370_89_hit.mtn",
+        "file": "c370_88_hit.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
     ],
     "idle": [
       {
-        "file": "c370_89_idle.mtn",
+        "file": "c370_88_idle.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
