@@ -7,21 +7,21 @@
   "motions": {
     "attack": [
       {
-        "file": "c075_02_attack.mtn",
+        "file": "c132_10_attack.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
     ],
     "hit": [
       {
-        "file": "c075_02_hit.mtn",
+        "file": "c132_10_hit.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
     ],
     "idle": [
       {
-        "file": "c075_02_idle.mtn",
+        "file": "c132_10_idle.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
