@@ -131,7 +131,7 @@ function init(dir, canvas) {
     motionStop._$dP = 0
     for (var i = 0; i < motionStop.motions.length; i++) {
       var arr = new Float32Array(300)
-      motionStop.motions[i]._$I0 = arr.fill(motionStop.motions[i]._$I0[0])
+      motionStop.motions[i]._$I0 = arr.fill(0) // arr.fill(motionStop.motions[i]._$I0[0])
     }
   })
   // child motions

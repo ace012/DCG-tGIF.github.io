@@ -23,12 +23,27 @@ function getResults(grabLimit, grabRate) {
   zip.generateAsync({type:"blob"}, function updateCallback(metadata) {
   })
   .then(function callback(blob) {
-    saveAs(blob, childName + "_" + canvas.width + "_" + grabLimit + "_" + grabRate + ".zip");
+    saveAs(blob, childName + "_" + canvas.width + "_" + canvas.height + "_" + grabLimit + "_" + grabRate + ".zip");
   }, function (e) {
     showError(e);
   });
 }
+/*
+function getPNGImage() {
+  var childName = searchParams.get('mN') || "c444_02";
+  var mS = searchParams.get('mS') || 1;
+  var mX = searchParams.get('mX') || 0;
+  var mY = searchParams.get('mY') || 0;
 
+  var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
+  var img = window.atob(encodedImg);
+  function callback() {
+    saveAs(img, childName + "_" + mS + "_" + mX + "_" + mY)
+  }, function (e) {
+    showError(e);
+  };
+}
+*/
 function getFrameHQLS(mtn) {
   if (mtn == 'idle')
     motionMgr.startMotion(motionIdle);
