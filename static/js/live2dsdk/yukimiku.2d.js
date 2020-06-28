@@ -134,6 +134,16 @@ function init(dir, canvas) {
       motionStop.motions[i]._$I0 = arr.fill(0) // arr.fill(motionStop.motions[i]._$I0[0])
     }
   })
+  loadBytes(getPath(dir, modelJson.motions.idle[0].file), 'arraybuffer', function(buf) {
+    motionIdleStop = new Live2DMotion.loadMotion(buf)
+    // remove fade in/out delay to make it smooth
+    motionIdleStop._$eo = 0
+    motionIdleStop._$dP = 0
+    for (var i = 0; i < motionIdleStop.motions.length; i++) {
+      var arr = new Float32Array(300)
+      motionIdleStop.motions[i]._$I0 = arr.fill(motionIdleStop.motions[i]._$I0[0])
+    }
+  })
   // child motions
   if(modelJson.motions.attack) {
     loadBytes(getPath(dir, modelJson.motions.attack[0].file), 'arraybuffer', function(buf) {
