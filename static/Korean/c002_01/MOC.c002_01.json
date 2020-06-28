@@ -23,8 +23,16 @@
       "file": "pretense.exp.json"
     },
     {
+      "name": "sad",
+      "file": "sad.exp.json"
+    },
+    {
       "name": "serious",
       "file": "serious.exp.json"
+    },
+    {
+      "name": "shock",
+      "file": "shock.exp.json"
     },
     {
       "name": "shy",
