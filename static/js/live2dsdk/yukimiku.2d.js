@@ -77,8 +77,6 @@ function initLive2d(dir, model) {
   init(dir, canvas)
 }
 
-
-
 function init(dir, canvas) {
   // try getting WebGl context
   var gl = getWebGLContext(canvas)
@@ -124,6 +122,16 @@ function init(dir, canvas) {
     // remove fade in/out delay to make it smooth
     motionIdle._$eo = 0
     motionIdle._$dP = 0
+  })
+  loadBytes(getPath(dir, modelJson.motions.idle[0].file), 'arraybuffer', function(buf) {
+    motionStop = new Live2DMotion.loadMotion(buf)
+    // remove fade in/out delay to make it smooth
+    motionStop._$eo = 0
+    motionStop._$dP = 0
+    for (var i = 0; i < motionStop.motions.length; i++) {
+      var arr = new Float32Array(300)
+      motionStop.motions[i]._$I0 = arr.fill(motionStop.motions[i]._$I0[0])
+    }
   })
   // child motions
   if(modelJson.motions.attack) {
