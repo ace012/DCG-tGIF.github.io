@@ -20,6 +20,10 @@
     <script src="static/js/live2dsdk/Live2DFramework.js"></script>
     <script src="static/js/live2dsdk/PlatformManager.js"></script>
     <script src="static/js/live2dsdk/ModelSettingJson.js"></script>
+  <script type="text/javascript">
+    var doDraw = true;
+  </script>
+
 	<script src="static/js/live2dsdk/yukimiku.2d.js"></script>
 
   <script src="static/js/live2dsdk/pngScript.js"></script>
@@ -36,7 +40,10 @@
             let canvas = document.getElementById("canvas");
     </script>
 
-    <div>mN   : <input id="mN" type="text" name="mN" autofocus=true> Spa file? <input id="isSpa" type="checkbox" name="isSpa"></div>
+    <div>
+      mN   : <input id="mN" type="text" name="mN" autofocus=true>
+      Spa file? <input id="isSpa" type="checkbox" name="isSpa">
+    </div>
     <div>width : <input id="width" type="number" name="width"></div>
     <div>height : <input id="height" type="number" name="height"></div>
     <div>mS   : <input id="mS" type="number" name="mS"></div>
@@ -45,7 +52,7 @@
 
     <script>
       var searchParams = (new URL(window.location.href)).searchParams;
-      document.getElementById('mN').value = searchParams.get('mN') || 'c417_02';
+      document.getElementById('mN').value = searchParams.get('mN') || 'c444_01';
       document.getElementById('width').value = searchParams.get('width') || 600;
       document.getElementById('height').value = searchParams.get('height') || 600;
       document.getElementById('mS').value = searchParams.get('mS') || 1;
@@ -79,10 +86,13 @@
     <p></p>
     <div>Motion Preview</div>
     <div>
-      <button type="button" name="attackPreview" onclick="javascript:motionMgr.startMotion(motionClick);">attack motion</button>
-      <button type="button" name="idlePreview" onclick="javascript:motionMgr.startMotion(motionIdle);">idle motion</button>
-      <button type="button" name="hitPreview" onclick="javascript:motionMgr.startMotion(motionHit);">hit motion</button>
-      <button type="button" name="stopPreview" onclick="javascript:motionMgr.startMotion(motionStop);">motion stop (10 sec)</button>
+      <button type="button" name="attackPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionClick);">attack motion</button>
+      <button type="button" name="idlePreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionIdle);">idle motion</button>
+      <button type="button" name="hitPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionHit);">hit motion</button>
+    </div>
+    <div>
+      <button type="button" name="stopPreview" onclick="javascript:doDraw=false;">stop motion</button>
+      <button type="button" name="defaultPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionStop);">default idle image (10 sec)</button>
     </div>
     <p></p>
 

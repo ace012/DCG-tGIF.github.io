@@ -1,6 +1,6 @@
 // default parameters
 var canvasSize = 600,
-    modelName = 'c417_02',
+    modelName = 'c444_01',
     modelScale = 1.0,
     modelX = 0.0,
     modelY = 0.0,
@@ -8,6 +8,7 @@ var canvasSize = 600,
     canvasWidth = 600, canvasHeight = 600
 
 function totsugeki() {
+  doDraw = true
   if(motionMgr !== null && motionClick !== null) {
     motionMgr.startMotion(motionClick)
   }
@@ -213,8 +214,11 @@ function init(dir, canvas) {
   })()
 }
 
+var doDraw = true
 
 function draw(gl) {
+  if(doDraw === false){ return; }
+
   // clear canvas
   gl.clearColor(0.0, 0.0, 0.0, 0.0)
   gl.clear(gl.COLOR_BUFFER_BIT)

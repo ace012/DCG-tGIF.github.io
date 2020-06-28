@@ -1,5 +1,3 @@
-var modelName = 'c417_02';
-
 var shots = [];
 var count = 0;
 
@@ -17,7 +15,7 @@ function pad(n, width, z) {
 function getResults(grabLimit, grabRate) {
   var zip = new JSZip();
   var searchParams = (new URL(window.location.href)).searchParams;
-  var childName = searchParams.get('mN') || modelName;
+  var childName = searchParams.get('mN') || "c444_02";
   for (var i = 0; i < shots.length; i++) {
     var filename = childName + "_" + pad(i, 4) + ".png";
     zip.file(filename, shots[i], {binary:true});
