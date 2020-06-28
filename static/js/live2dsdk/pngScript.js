@@ -28,22 +28,19 @@ function getResults(grabLimit, grabRate) {
     showError(e);
   });
 }
-/*
+
 function getPNGImage() {
   var childName = searchParams.get('mN') || "c444_02";
   var mS = searchParams.get('mS') || 1;
   var mX = searchParams.get('mX') || 0;
   var mY = searchParams.get('mY') || 0;
 
-  var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
-  var img = window.atob(encodedImg);
-  function callback() {
-    saveAs(img, childName + "_" + mS + "_" + mX + "_" + mY)
-  }, function (e) {
-    showError(e);
-  };
+  var canv = document.getElementById("canvas");
+  canvas.toBlob(function(blob) {
+    saveAs(blob, childName + "_" + canvas.width + "_" + canvas.height + "_" + mS + "_" + mX + "_" + mY + ".png");
+  });
 }
-*/
+
 function getFrameHQLS(mtn) {
   if (mtn == 'idle')
     motionMgr.startMotion(motionIdle);

@@ -2,28 +2,17 @@
 <html>
 <head>
   <title>Live2D</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    body, html {
-      max-width: 100%;
-      max-height: 100%;
-    }
-    canvas {
-      max-width: 100%;
-      max-height: 100%;
-    }
-  </style>
-    <script src="static/js/live2dsdk/live2d.min.js"></script>
-    <script src="static/js/live2dsdk/Live2DFramework.js"></script>
-    <script src="static/js/live2dsdk/PlatformManager.js"></script>
-    <script src="static/js/live2dsdk/ModelSettingJson.js"></script>
+
+  <link rel="stylesheet" href="static/css/style.css">
+
+  <script src="static/js/live2dsdk/live2d.min.js"></script>
+  <script src="static/js/live2dsdk/Live2DFramework.js"></script>
+  <script src="static/js/live2dsdk/PlatformManager.js"></script>
+  <script src="static/js/live2dsdk/ModelSettingJson.js"></script>
+
   <script type="text/javascript">
     var doDraw = true;
   </script>
-
 	<script src="static/js/live2dsdk/yukimiku.2d.js"></script>
 
   <script src="static/js/live2dsdk/pngScript.js"></script>
@@ -33,7 +22,7 @@
   <script type="text/javascript" src="static/jszip/test/jquery-1.8.3.min.js"></script>
   <script type="text/javascript" src="static/jszip/vendor/FileSaver.js"></script>
 
-  <body onload="initModel('kr')" style="margin: 0; padding: 0;">
+  <body onload="initModel('kr')">
     <canvas id="canvas" class="maxwidth" width="500px" height="800px" style="margin: 10px;" onclick="totsugeki()"></canvas>
     <select id="modelMotions" class="select-motions" style="display: none;"></select>
     <script>
@@ -80,8 +69,10 @@
     <div><button type="button" name="reload" onclick="javascript:reload();">Reload Child</button></div>
 
     <p></p>
-    <div>Choose custom texture files (If you want to use):</div>
-    <div><input type="file" id="textures" name="textures" accept="image/png" multiple onchange="handleFiles(this.files)"></div>
+    <div>
+      Capture & Save this image 
+      <button type="button" name="saveImage" onclick="javascript:getPNGImage();">save image</button>
+    </div>
 
     <p></p>
     <div>Motion Preview</div>
@@ -94,8 +85,8 @@
       <button type="button" name="stopPreview" onclick="javascript:doDraw=false;">stop motion</button>
       <button type="button" name="defaultPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionStop);">default image (10 sec)</button>
     </div>
-    <p></p>
 
+    <p>Capture image frame by frame</p>
     <div>grabLimit     : <input id="grabLimit" type="number" name="grabLimit" value="100"></div>
     <div>grabRate (ms) : <input id="grabRate" type="number" name="grabRate" value="30"></div>
 
@@ -109,6 +100,10 @@
       <button type="button" name="idleHQLS" onclick="javascript:getPNGsHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'idle');">get idle motion PNGs Low-Speed</button>
       <button type="button" name="hitHQLS" onclick="javascript:getPNGsHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'hit');">get hit motion PNGs Low-Speed</button>
     </div>
+
+    <p></p>
+    <div>Choose custom texture files (If you want to use):</div>
+    <div><input type="file" id="textures" name="textures" accept="image/png" multiple onchange="handleFiles(this.files)"></div>
 
   </body>
 
