@@ -83,12 +83,22 @@
       <button type="button" name="maxtouchPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionMaxtouch);switchSpa(true);">maxtouch motion</button>
     </div>
     <div>
-      <button type="button" name="stopPreview" onclick="javascript:doDraw=false;">stop motion</button>
+      <button type="button" name="stopPreview" onclick="javascript:doDraw=doDraw?false:true;">stop motion</button>
       <button type="button" name="defaultPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionDefault);">default image (10 sec)</button>
     </div>
     <p></p>
 
-    <p>Capture image frame by frame</p>
+    <p>Capture full motion images frame by frame</p>
+
+    <div>
+      <button type="button" name="idleHQLS" onclick="javascript:getPNGsFullSpa('idle');">get FULL idle motion PNGs</button>
+      <button type="button" name="touchHQLS" onclick="javascript:getPNGsFullSpa('touch');">get FULL touch motion PNGs</button>
+      <button type="button" name="maxHQLS" onclick="javascript:getPNGsFullSpa('max');">get FULL max motion PNGs</button>
+      <button type="button" name="maxtouchHQLS" onclick="javascript:getPNGsFullSpa('maxtouch');">get FULL maxtouch motion PNGs</button>
+    </div>
+
+    <p>... or set grabCount and grabRate manually</p>
+
     <div>grabLimit     : <input id="grabLimit" type="number" name="grabLimit" value="100"></div>
     <div>grabRate (ms) : <input id="grabRate" type="number" name="grabRate" value="30"></div>
 
@@ -98,16 +108,20 @@
       <button type="button" name="maxLQHS" onclick="javascript:getPNGsSpaLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'max');">get max motion PNGs High-Speed</button>
       <button type="button" name="maxtouchLQHS" onclick="javascript:getPNGsSpaLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'maxtouch');">get maxtouch motion PNGs High-Speed</button>
     </div>
-    <div>
-      <button type="button" name="idleHQLS" onclick="javascript:getPNGsSpaHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'idle');">get idle motion PNGs Low-Speed</button>
-      <button type="button" name="touchHQLS" onclick="javascript:getPNGsSpaHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'touch');">get touch motion PNGs Low-Speed</button>
-      <button type="button" name="maxHQLS" onclick="javascript:getPNGsSpaHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'max');">get max motion PNGs Low-Speed</button>
-      <button type="button" name="maxtouchHQLS" onclick="javascript:getPNGsSpaHQLS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'maxtouch');">get maxtouch motion PNGs Low-Speed</button>
-    </div>
 
     <p></p>
     <div>Choose custom texture files (If you want to use):</div>
     <div><input type="file" id="textures" name="textures" accept="image/png" multiple onchange="handleFiles(this.files)"></div>
+
+    <p></p>
+
+    <footer>
+    Destiny Child is owned by Shiftup Corp | DCG-tGIF.github.io is project By Remain </br>
+    DCG-tGIF based on <a href="https://live2d-dcg.github.io">Live2D viewer project</a> by u/ToxicWayz on Reddit, and Live2D cubism v2 api by <a href="https://github.com/live2d-dcg" target="_blank">Arsylk</a>. </br>
+    If you have any questions, please reply on <a href="https://gall.dcinside.com/mgallery/board/view/?id=su&no=1093925">this post</a>, or contact to <a href="mailto:ace993494@gmail.com" target="_blank">ace993494@gmail.com</a> </br>
+    <a href="https://github.com/ace012/dcg-tgif-maker" target="_blank">Destiny Child GIF Maker Tools & Manuals</a> <a href="https://github.com/dcg-tgif/dcg-tgif.github.io">Source code</a>
+  
+    </footer>
 
   </body>
 

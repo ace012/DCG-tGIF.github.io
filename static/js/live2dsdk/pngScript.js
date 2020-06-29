@@ -41,35 +41,6 @@ function getPNGImage() {
   });
 }
 
-function getFrameHQLS(mtn) {
-  if (mtn == 'idle')
-    motionMgr.startMotion(motionIdle);
-  else if (mtn == 'hit')
-    motionMgr.startMotion(motionHit);
-  else
-    motionMgr.startMotion(motionClick);
-
-  setTimeout(function() {
-    var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
-    var img = window.atob(encodedImg);
-    shots.push(img);
-  }, count * grabRate);
-  count++;
-};
-
-function getPNGsHQLS(grabLimit, grabRate, mtn) {
-  var accTime = 0;
-  shots = [];
-  count = 0;
-
-  for (var i = 0; i <= grabLimit; i++) {
-    var interval = i * grabRate + 500;
-    accTime = accTime + interval;
-    setTimeout(function(){getFrameHQLS(mtn);}, accTime);
-  };
-  setTimeout(function(){getResults(grabLimit, grabRate);}, accTime + grabLimit * grabRate + 1000);
-};
-
 function getPNGsLQHS(grabLimit, grabRate, mtn) {
   shots = [];
   count = 0;
@@ -91,43 +62,7 @@ function getPNGsLQHS(grabLimit, grabRate, mtn) {
     shots.push(img);
     count++;
   }, grabRate);
-};
-
-function getFrameSpaHQLS(mtn) {
-  if (mtn == 'idle')
-    motionMgr.startMotion(motionIdle);
-  else if (mtn == 'max')
-    motionMgr.startMotion(motionMax);
-  else if (mtn == 'maxtouch')
-    motionMgr.startMotion(motionMaxtouch);
-  else
-    motionMgr.startMotion(motionClick);
-
-  setTimeout(function() {
-    var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
-    var img = window.atob(encodedImg);
-    shots.push(img);
-  }, count * grabRate);
-  count++;
-};
-
-function getPNGsSpaHQLS(grabLimit, grabRate, mtn) {
-  var accTime = 0;
-  shots = [];
-  count = 0;
-
-  if (mtn == 'max' || mtn == 'maxtouch')
-    switchSpa(true)
-  else
-    switchSpa(false)
-
-  for (var i = 0; i <= grabLimit; i++) {
-    var interval = i * grabRate + 500;
-    accTime = accTime + interval;
-    setTimeout(function(){getFrameSpaHQLS(mtn);}, accTime);
-  };
-  setTimeout(function(){getResults(grabLimit, grabRate);}, accTime + grabLimit * grabRate + 1000);
-};
+}
 
 function getPNGsSpaLQHS(grabLimit, grabRate, mtn) {
   shots = [];
@@ -157,4 +92,68 @@ function getPNGsSpaLQHS(grabLimit, grabRate, mtn) {
     shots.push(img);
     count++;
   }, grabRate);
-};
+}
+
+function getPNGsFull(mtn) {
+  shots = [];
+  count = 0;
+  var motionFile;
+  var dir = "static/Korean/"
+
+  if (mtn == 'idle')
+    motionFile = modelJson.motions.idle[0].file
+  else if (mtn == 'hit')
+    motionFile = modelJson.motions.hit[0].file
+  else if (mtn == 'attack')
+    motionFile = modelJson.motions.attack[0].file
+  else if (mtn == 'touch')
+    motionFile = modelJson.motions.touch[0].file
+  else if (mtn == 'max')
+    motionFile = modelJson.motions.max[0].file
+  else if (mtn == 'maxtouch')
+    motionFile = modelJson.motions.maxtouch[0].file
+
+  loadBytes(getPath(dir, motionFile), 'arraybuffer', function(buf) {
+    motionGrab = new Live2DMotion.loadMotion(buf)
+    // remove fade in/out delay to make it smooth
+    motionGrab._$eo = 0
+    motionGrab._$dP = 0
+    var grabFPS = motionGrab._$D0;
+    motionGrab._$D0 = 5
+    var grabLimit = motionGrab._$yT;
+    var grabRate = 1000 / motionGrab._$D0
+    motionGrab._$rr = grabLimit * grabRate
+    for (var i = 0; i < motionGrab.motions.length; i++) {
+      if (motionGrab.motions[i]._$I0.length <= 1)
+        continue
+      motionGrab.motions[i]._$RP = 1
+    }
+
+    motionMgr.startMotion(motionGrab);
+
+    var grabber = setInterval(function(){
+      if (count >= grabLimit) {
+        clearInterval(grabber);
+        getResults(grabLimit, grabFPS);
+      }
+      var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
+      var img = window.atob(encodedImg);
+      shots.push(img);
+      count++;
+    }, grabRate);
+  })
+}
+
+function getPNGsFullSpa(mtn) {
+  shots = [];
+  count = 0;
+  var motionFile;
+  var dir = "static/Korean/"
+
+  if (mtn == 'max' || mtn == 'maxtouch')
+    switchSpa(true)
+  else
+    switchSpa(false)
+
+  getPNGsFull(mtn)
+}
