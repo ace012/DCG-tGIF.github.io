@@ -27,6 +27,86 @@ function switchSpa(isMax) {
   }
 }
 
+function parseFloat(arr) {
+  var intval = 0, mask = 0x1000000, i
+  var sign, exp, mantissa, float = 0
+  for (i = 0; i < 4; i++) {
+    intval = intval + arr[i] * mask
+    mask = mask >>> 8
+  }
+  if (intval === 0)
+    return 0.0
+  sign = (intval >>> 31) ? -1 : 1;
+  exp = (intval >>> 23 & 0xff) - 127;
+  if (exp === 128)
+    return null
+  mantissa = ((intval & 0x7fffff) + 0x800000).toString(2);
+  for (i = 0; i < mantissa.length; i++) {
+    float += parseInt(mantissa[i]) ? Math.pow(2, exp) : 0;
+    exp--;
+  }
+  return float * sign;
+}
+
+function str2ab(str) {
+  var buf = new ArrayBuffer(str.length);
+  var bufView = new Uint8Array(buf);
+  for (var i=0, strlen=str.length; i<strlen; i++) {
+    bufView[i] = str.charCodeAt(i);
+  }
+ return buf;
+}
+
+function getAllIndexes(arr, strings) {
+  var res = [], val, i, j;
+
+  for (i = 0; i < strings.length; i++) {
+    if (strings[i].indexOf("VISIBLE:") !== -1) {
+      res.push(null)
+      continue
+    }
+    var ab = new Uint8Array(str2ab(strings[i]))
+    val = ab[0]
+    for (j = arr.indexOf(val); j < arr.length; j++) {
+      if (arr[j] === val) {
+        if (ab.toString() === arr.slice(j, j + ab.length).toString()) {
+          res.push(j)
+          break
+        }
+      }
+      if (j === arr.length - 1)
+        res.push(0)
+    }
+  }
+  return res;
+}
+/*
+function loadDefaultLocation(dir, motionStrings) {
+  loadBytes(getPath(dir, 'character.dat'), 'arraybuffer', function(buf) {
+    var changed = 0
+    var notfound = 0
+    var charData = new Uint8Array(buf)
+    var indexes = getAllIndexes(charData, motionStrings) // matching '<'
+    var res = [], val, i
+    for (i = 0; i < indexes.length; i++) {
+      if (indexes[i] !== null && indexes[i] !== 0) {
+        val = parseFloat(charData.slice(indexes[i] - 6, indexes[i] - 2))
+        if (val !== 0)
+          changed++
+        res.push(val)
+      }
+      else {
+        notfound++
+        res.push(indexes[i])
+      }
+    }
+    console.log(indexes.length, changed, notfound)
+    console.log(res)
+
+    return res
+  })
+}
+*/
 function initModel(pathDir) {
 	if (pathDir == 'kr'){
 		dir = "static/Korean/"
@@ -124,13 +204,17 @@ function init(dir, canvas) {
     motionIdle._$eo = 0
     motionIdle._$dP = 0
   })
+  /*
   loadBytes(getPath(dir, modelJson.motions.idle[0].file), 'arraybuffer', function(buf) {
     motionStop = new Live2DMotion.loadMotion(buf)
     // remove fade in/out delay to make it smooth
     motionStop._$eo = 0
     motionStop._$dP = 0
+    motionStop._$D0 = 1
+    motionStop._$yT = 10
+    motionStop._$rr = 10000
     for (var i = 0; i < motionStop.motions.length; i++) {
-      var arr = new Float32Array(300)
+      var arr = new Float32Array(10)
       motionStop.motions[i]._$I0 = arr.fill(0) // arr.fill(motionStop.motions[i]._$I0[0])
     }
   })
@@ -139,9 +223,51 @@ function init(dir, canvas) {
     // remove fade in/out delay to make it smooth
     motionIdleStop._$eo = 0
     motionIdleStop._$dP = 0
+    motionIdleStop._$D0 = 1
+    motionIdleStop._$yT = 10
+    motionIdleStop._$rr = 10000
     for (var i = 0; i < motionIdleStop.motions.length; i++) {
-      var arr = new Float32Array(300)
+      var arr = new Float32Array(10)
       motionIdleStop.motions[i]._$I0 = arr.fill(motionIdleStop.motions[i]._$I0[0])
+    }
+  })
+  */
+  var motionStrings;
+  loadBytes(getPath(dir, modelJson.motions.idle[0].file), 'arraybuffer', function(buf) {
+    motionDefault = new Live2DMotion.loadMotion(buf)
+    // remove fade in/out delay to make it smooth
+    motionDefault._$eo = 0
+    motionDefault._$dP = 0
+    motionDefault._$D0 = 1
+    motionDefault._$yT = 10
+    motionDefault._$rr = 10000
+    motionStrings = motionDefault.motions.map(({_$4P}) => _$4P)
+  })
+  loadBytes(getPath(dir, 'character.dat'), 'arraybuffer', function(buf) {
+    var motionValue = []
+    var charData = new Uint8Array(buf)
+    var indexes = getAllIndexes(charData, motionStrings)
+    var val, i
+
+    for (i = 0; i < indexes.length; i++) {
+      if (indexes[i] !== null && indexes[i] !== 0) {
+        val = parseFloat(charData.slice(indexes[i] - 6, indexes[i] - 2))
+        motionValue.push(val)
+      }
+      else {
+        motionValue.push(indexes[i])
+      }
+    }
+
+    for (var i = 0; i < motionValue.length; i++) {
+      if (motionValue[i] === null) {
+        motionValue.splice(i, 1);
+        motionDefault.motions.splice(i, 1);
+        i--;
+        continue
+      }
+      var arr = new Float32Array(10)
+      motionDefault.motions[i]._$I0 = arr.fill(motionValue[i])
     }
   })
   // child motions
