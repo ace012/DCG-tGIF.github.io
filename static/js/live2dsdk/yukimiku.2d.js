@@ -232,7 +232,6 @@ function init(dir, canvas) {
     }
   })
   */
-  var motionStrings;
   loadBytes(getPath(dir, modelJson.motions.idle[0].file), 'arraybuffer', function(buf) {
     motionDefault = new Live2DMotion.loadMotion(buf)
     // remove fade in/out delay to make it smooth
@@ -241,34 +240,34 @@ function init(dir, canvas) {
     motionDefault._$D0 = 1
     motionDefault._$yT = 10
     motionDefault._$rr = 10000
-    motionStrings = motionDefault.motions.map(({_$4P}) => _$4P)
-  })
-  loadBytes(getPath(dir, 'character.dat'), 'arraybuffer', function(buf) {
-    var motionValue = []
-    var charData = new Uint8Array(buf)
-    var indexes = getAllIndexes(charData, motionStrings)
-    var val, i
+    var motionStrings = motionDefault.motions.map(({_$4P}) => _$4P)
+    loadBytes(getPath(dir, 'character.dat'), 'arraybuffer', function(buf) {
+      var motionValue = []
+      var charData = new Uint8Array(buf)
+      var indexes = getAllIndexes(charData, motionStrings)
+      var val, i
 
-    for (i = 0; i < indexes.length; i++) {
-      if (indexes[i] !== null && indexes[i] !== 0) {
-        val = parseFloat(charData.slice(indexes[i] - 6, indexes[i] - 2))
-        motionValue.push(val)
+      for (i = 0; i < indexes.length; i++) {
+        if (indexes[i] !== null && indexes[i] !== 0) {
+          val = parseFloat(charData.slice(indexes[i] - 6, indexes[i] - 2))
+          motionValue.push(val)
+        }
+        else {
+          motionValue.push(indexes[i])
+        }
       }
-      else {
-        motionValue.push(indexes[i])
-      }
-    }
 
-    for (var i = 0; i < motionValue.length; i++) {
-      if (motionValue[i] === null) {
-        motionValue.splice(i, 1);
-        motionDefault.motions.splice(i, 1);
-        i--;
-        continue
+      for (var i = 0; i < motionValue.length; i++) {
+        if (motionValue[i] === null) {
+          motionValue.splice(i, 1);
+          motionDefault.motions.splice(i, 1);
+          i--;
+          continue
+        }
+        var arr = new Float32Array(10)
+        motionDefault.motions[i]._$I0 = arr.fill(motionValue[i])
       }
-      var arr = new Float32Array(10)
-      motionDefault.motions[i]._$I0 = arr.fill(motionValue[i])
-    }
+    })
   })
   // child motions
   if(modelJson.motions.attack) {
