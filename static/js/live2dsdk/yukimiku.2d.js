@@ -107,17 +107,30 @@ function loadDefaultLocation(dir, motionStrings) {
   })
 }
 */
-function initModel(pathDir) {
-	if (pathDir == 'kr'){
-		dir = "static/Korean/"
-	} else
-		dir = "static/Global/"
+function initModelTeen() {
+  var dir = "static/Global/"
 
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      if (xhr.status !== 200) {
+        console.error('Failed to load (' + xhr.status + ') : ' + path)
+        initModel()
+      } else {
+        var modelJson = JSON.parse(xhr.response)
+          initLive2d(dir, modelJson)
+      }
+    }
+  }
 
-  // get variables from GET
-  var searchParams = (new URL(window.location.href)).searchParams,
-      canvasWidth = searchParams.get('width') || canvasSize
-  var searchParams = (new URL(window.location.href)).searchParams,
+  var path = dir + modelName + '/MOC.' + modelName + '.json'
+  xhr.open('GET', path, true);
+  xhr.send(null);
+}
+
+function initModelKR() {
+  var searchParams = (new URL(window.location.href)).searchParams
+  var canvasWidth = searchParams.get('width') || canvasSize,
       canvasHeight = searchParams.get('height') || canvasSize
 
   canvas.width = canvasWidth
@@ -132,11 +145,20 @@ function initModel(pathDir) {
   var mN = searchParams.get('mN')
   if(mN) modelName = mN
 
+  if (searchParams.get('isTeen') === "true") {
+    initModelTeen()
+  } else {
+    initModel()
+  }
+}
+
+function initModel() {
+	var dir = "static/Korean/"
+
   loadBytes(getPath(dir, 'MOC.' + modelName + '.json'), 'text', function(buf) {
     var modelJson = JSON.parse(buf)
     initLive2d(dir, modelJson)
   })
-
 }
 
 function initLive2d(dir, model) {
@@ -419,12 +441,12 @@ function loadBytes(path, mime, callback) {
   request.open('GET', path, true)
   request.responseType = mime
   request.onload = function() {
-//    if(request.status == 200) {
+    if(request.status === 200) {
       callback(request.response)
-//    }
-//    else {
-//      console.error('Failed to load (' + request.status + ') : ' + path)
-//    }
+    }
+    else {
+      console.error('Failed to load (' + request.status + ') : ' + path)
+    }
   }
   request.send(null)
 }

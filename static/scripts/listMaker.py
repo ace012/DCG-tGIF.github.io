@@ -1,6 +1,6 @@
 import os
 
-texturePath = "../Korean"
+texturePath = "../Global"
 
 def extractList(f):
     textList = []
@@ -24,7 +24,7 @@ def appendChild(mN, f, l1, l2):
 
 
 def main():
-    f = open("textureList.txt", 'w')
+    f = open("textureListTeen.txt", 'w')
     txt1 = open("../../list.txt", 'r')
     txt2 = open("../../list_jp.txt", 'r')
 
