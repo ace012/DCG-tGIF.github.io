@@ -2,7 +2,7 @@ import os
 import math
 from PIL import Image
 
-texturePath = "./Korean"
+texturePath = "../Korean"
 
 def checkChild(mN):
     path = texturePath + "/" + mN + "/"
