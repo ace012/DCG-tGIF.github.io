@@ -1,5 +1,6 @@
 import os
 import math
+import json
 from PIL import Image
 
 texturePath = "../Korean"
@@ -29,6 +30,19 @@ def checkChild(mN):
         if not math.log(width, 2).is_integer() or not math.log(height, 2).is_integer():
             print mN + ": invalid texture image - texture_01.png"
 
+    with open(path + "MOC." + mN + ".json") as json_file:
+        data = json.load(json_file)
+
+        for t in data["textures"]:
+            if t != "texture_00.png" and t != "texture_01.png":
+                print mN + ": weird texture file name - " + t
+
+        if data["model"] != "character.dat":
+            print mN + ": weird model file name - " + data["model"]
+
+        for m in data["motions"]:
+            if data["motions"][m][0]["file"] != mN + "_" + m + ".mtn":
+                print mN + ": weird motion file name - " + data["motions"][m][0]["file"]
 
 def checkSpa(mN):
     path = texturePath + "/" + mN + "/"
