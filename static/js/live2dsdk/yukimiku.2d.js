@@ -155,7 +155,11 @@ function initModelKR() {
 function initModel() {
 	var dir = "static/Korean/"
 
-  loadBytes(getPath(dir, 'MOC.' + modelName + '.json'), 'text', function(buf) {
+  loadBytes(getPath(dir, 'MOC.' + modelName + '.json'), 'text', function(buf, status) {
+    if (status !== 200) {
+      console.error('Failed to load (' + status + ') : ' + getPath(dir, 'MOC.' + modelName + '.json'))
+      return;
+    }
     var modelJson = JSON.parse(buf)
     initLive2d(dir, modelJson)
   })
@@ -440,13 +444,13 @@ function loadBytes(path, mime, callback) {
   var request = new XMLHttpRequest()
   request.open('GET', path, true)
   request.responseType = mime
-  request.onload = function() {
-    if(request.status === 200) {
-      callback(request.response)
-    }
-    else {
-      console.error('Failed to load (' + request.status + ') : ' + path)
-    }
+  request.onloadend = function() {
+//    if(request.status === 200) {
+      callback(request.response, request.status)
+//    }
+//    else {
+//      console.error('Failed to load (' + request.status + ') : ' + path)
+//    }
   }
   request.send(null)
 }
