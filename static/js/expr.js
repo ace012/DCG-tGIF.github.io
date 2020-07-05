@@ -45,7 +45,7 @@ function enableExpr(key) {
         var m = {}
         m._$4P = exprParams[j]
         m._$I0 = new Float32Array(1)
-        m._$I0[0] = exprParamsVal[0]
+        m._$I0[0] = exprParamsVal[j]
         m._$RP = 0
         motions[i].motions.push(m)
       }
