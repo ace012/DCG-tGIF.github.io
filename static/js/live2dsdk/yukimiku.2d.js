@@ -7,6 +7,10 @@ var canvasSize = 600,
     motionIdle = null, motionClick = null,
     canvasWidth = 600, canvasHeight = 600
 
+var motions = []
+var exprs = {}
+
+
 function totsugeki() {
   doDraw = true
   if(motionMgr !== null && motionClick !== null) {
@@ -80,44 +84,19 @@ function getAllIndexes(arr, strings) {
   }
   return res;
 }
-/*
-function loadDefaultLocation(dir, motionStrings) {
-  loadBytes(getPath(dir, 'character.dat'), 'arraybuffer', function(buf) {
-    var changed = 0
-    var notfound = 0
-    var charData = new Uint8Array(buf)
-    var indexes = getAllIndexes(charData, motionStrings) // matching '<'
-    var res = [], val, i
-    for (i = 0; i < indexes.length; i++) {
-      if (indexes[i] !== null && indexes[i] !== 0) {
-        val = parseFloat(charData.slice(indexes[i] - 6, indexes[i] - 2))
-        if (val !== 0)
-          changed++
-        res.push(val)
-      }
-      else {
-        notfound++
-        res.push(indexes[i])
-      }
-    }
-    console.log(indexes.length, changed, notfound)
-    console.log(res)
 
-    return res
-  })
-}
-*/
 function initModelTeen() {
   var dir = "static/Global/"
 
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState === 4) {
+      // Remove when you try to local test
       if (xhr.status !== 200) {
         console.error('Failed to load (' + xhr.status + ') : ' + path)
         initModel()
       } else {
-        var modelJson = JSON.parse(xhr.response)
+          var modelJson = JSON.parse(xhr.response)
           initLive2d(dir, modelJson)
       }
     }
@@ -156,6 +135,7 @@ function initModel() {
 	var dir = "static/Korean/"
 
   loadBytes(getPath(dir, 'MOC.' + modelName + '.json'), 'text', function(buf, status) {
+    // Remove when you try to local test
     if (status !== 200) {
       console.error('Failed to load (' + status + ') : ' + getPath(dir, 'MOC.' + modelName + '.json'))
       return;
@@ -229,35 +209,9 @@ function init(dir, canvas) {
     // remove fade in/out delay to make it smooth
     motionIdle._$eo = 0
     motionIdle._$dP = 0
+    motions.push(motionIdle)
   })
-  /*
-  loadBytes(getPath(dir, modelJson.motions.idle[0].file), 'arraybuffer', function(buf) {
-    motionStop = new Live2DMotion.loadMotion(buf)
-    // remove fade in/out delay to make it smooth
-    motionStop._$eo = 0
-    motionStop._$dP = 0
-    motionStop._$D0 = 1
-    motionStop._$yT = 10
-    motionStop._$rr = 10000
-    for (var i = 0; i < motionStop.motions.length; i++) {
-      var arr = new Float32Array(10)
-      motionStop.motions[i]._$I0 = arr.fill(0) // arr.fill(motionStop.motions[i]._$I0[0])
-    }
-  })
-  loadBytes(getPath(dir, modelJson.motions.idle[0].file), 'arraybuffer', function(buf) {
-    motionIdleStop = new Live2DMotion.loadMotion(buf)
-    // remove fade in/out delay to make it smooth
-    motionIdleStop._$eo = 0
-    motionIdleStop._$dP = 0
-    motionIdleStop._$D0 = 1
-    motionIdleStop._$yT = 10
-    motionIdleStop._$rr = 10000
-    for (var i = 0; i < motionIdleStop.motions.length; i++) {
-      var arr = new Float32Array(10)
-      motionIdleStop.motions[i]._$I0 = arr.fill(motionIdleStop.motions[i]._$I0[0])
-    }
-  })
-  */
+
   loadBytes(getPath(dir, modelJson.motions.idle[0].file), 'arraybuffer', function(buf) {
     motionDefault = new Live2DMotion.loadMotion(buf)
     // remove fade in/out delay to make it smooth
@@ -294,7 +248,9 @@ function init(dir, canvas) {
         motionDefault.motions[i]._$I0 = arr.fill(motionValue[i])
       }
     })
+    motions.push(motionDefault)
   })
+
   // child motions
   if(modelJson.motions.attack) {
     loadBytes(getPath(dir, modelJson.motions.attack[0].file), 'arraybuffer', function(buf) {
@@ -302,6 +258,7 @@ function init(dir, canvas) {
       // remove fade in/out delay to make it smooth
       motionClick._$eo = 0
       motionClick._$dP = 0
+      motions.push(motionClick)
 	  })
 
     if (modelJson.motions.hit) {
@@ -310,20 +267,31 @@ function init(dir, canvas) {
         // remove fade in/out delay to make it smooth
         motionHit._$eo = 0
         motionHit._$dP = 0
+        motions.push(motionHit)
       })
     }
     else {
       motionHit = motionClick
     }
 
-/*    loadBytes(getPath(dir, modelJson.motions.banner[0].file), 'arraybuffer', function(buf) {
-      motionClick = new Live2DMotion.loadMotion(buf)
-      // remove fade in/out delay to make it smooth
-      motionClick._$eo = 0
-      motionClick._$dP = 0
-    })
-*/
+    // child expressions
+    if ("expressions" in modelJson) {
+      var exprsJson = modelJson.expressions
+      var exprCount = 0
+
+      for (var i = 0; i < exprsJson.length; i++) {
+        var exprName = exprsJson[i].name
+        loadBytes(getPath(dir, exprsJson[i].file), 'json', function (expr, status, path) {
+          exprName = path.split('/').pop().split('.')[0]
+          exprs[exprName] = expr
+          exprCount++;
+          if (exprCount == exprsJson.length)
+            exprsOnload(exprs)
+        })
+      }
+    }
   }
+
   // spa motions
   else if ( modelJson.motions.touch) {
     loadBytes(getPath(dir, modelJson.motions.touch[0].file), 'arraybuffer', function(buf) {
@@ -331,18 +299,21 @@ function init(dir, canvas) {
       // remove fade in/out delay to make it smooth
       motionClick._$eo = 0
       motionClick._$dP = 0
+      motions.push(motionClick)
     })
     loadBytes(getPath(dir, modelJson.motions.max[0].file), 'arraybuffer', function(buf) {
       motionMax = new Live2DMotion.loadMotion(buf)
       // remove fade in/out delay to make it smooth
       motionMax._$eo = 0
       motionMax._$dP = 0
+      motions.push(motionMax)
     })
     loadBytes(getPath(dir, modelJson.motions.maxtouch[0].file), 'arraybuffer', function(buf) {
       motionMaxtouch = new Live2DMotion.loadMotion(buf)
       // remove fade in/out delay to make it smooth
       motionMaxtouch._$eo = 0
       motionMaxtouch._$dP = 0
+      motions.push(motionMaxtouch)
     })
 
     loadBytes(getPath(dir, modelJson.motions.idle[0].file), 'arraybuffer', function(buf) {
@@ -350,14 +321,15 @@ function init(dir, canvas) {
       // remove fade in/out delay to make it smooth
       motionIdle_._$eo = 0
       motionIdle_._$dP = 0
+      motions.push(motionIdle_)
     })
     loadBytes(getPath(dir, modelJson.motions.touch[0].file), 'arraybuffer', function(buf) {
       motionTouch = new Live2DMotion.loadMotion(buf)
       // remove fade in/out delay to make it smooth
       motionTouch._$eo = 0
       motionTouch._$dP = 0
+      motions.push(motionTouch)
     })
-
   }
 
   // ------------------------
@@ -446,7 +418,7 @@ function loadBytes(path, mime, callback) {
   request.responseType = mime
   request.onloadend = function() {
 //    if(request.status === 200) {
-      callback(request.response, request.status)
+      callback(request.response, request.status, path)
 //    }
 //    else {
 //      console.error('Failed to load (' + request.status + ') : ' + path)

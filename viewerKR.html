@@ -17,6 +17,7 @@
 
   <script src="static/js/pngScript.js"></script>
   <script src="static/js/customTexture.js"></script>
+  <script src="static/js/expr.js"></script>
 
   <script type="text/javascript" src="static/js/jszip/dist/jszip.js"></script>
   <script type="text/javascript" src="static/js/jszip/test/jquery-1.8.3.min.js"></script>
@@ -97,6 +98,11 @@
     <div>
       <button type="button" name="stopPreview" onclick="javascript:doDraw=doDraw?false:true;">stop motion</button>
       <button type="button" name="defaultPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionDefault);">default image (10 sec)</button>
+    </div>
+
+    <p></p>
+    <div>Enable Expressions</div>
+    <div id="exprs">
     </div>
 
     <p>Capture full motion images by real frame (typically 30 fps, 33.3 ms)</p>

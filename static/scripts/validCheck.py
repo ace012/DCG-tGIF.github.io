@@ -44,6 +44,18 @@ def checkChild(mN):
             if data["motions"][m][0]["file"] != mN + "_" + m + ".mtn":
                 print mN + ": weird motion file name - " + data["motions"][m][0]["file"]
 
+        if "expressions" in data:
+#            if mN[0] == 's' or mN[0] == 'm':
+#                print mN + " has expression file!"
+            if mN[0] == 'm':
+                print mN + " has exprs!"
+            for expr in data["expressions"]:
+                if not os.path.isfile(path + expr["file"]):
+                    print mN + ": expression file does not exist - " + expr["file"]
+
+#        elif mN[0] != 's' and mN[0] != 'm':
+#            print mN + ": doesn't have expression file!"
+
 def checkSpa(mN):
     path = texturePath + "/" + mN + "/"
     files = []
