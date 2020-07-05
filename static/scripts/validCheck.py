@@ -4,8 +4,12 @@ import json
 from PIL import Image
 
 texturePath = "../Korean"
+exprList = []
+
 
 def checkChild(mN):
+    global exprList
+
     path = texturePath + "/" + mN + "/"
     files = []
     files.append(path + "MOC." + mN + ".json")
@@ -47,11 +51,13 @@ def checkChild(mN):
         if "expressions" in data:
 #            if mN[0] == 's' or mN[0] == 'm':
 #                print mN + " has expression file!"
-            if mN[0] == 'm':
-                print mN + " has exprs!"
+#            if mN[0] == 'm':
+#                print mN + " has exprs!"
             for expr in data["expressions"]:
                 if not os.path.isfile(path + expr["file"]):
                     print mN + ": expression file does not exist - " + expr["file"]
+
+            exprList.append(mN)
 
 #        elif mN[0] != 's' and mN[0] != 'm':
 #            print mN + ": doesn't have expression file!"
@@ -83,6 +89,12 @@ def main():
         else:
             print mN + ": unknown modelName"
 
+    f = open("textureListExprRaw.txt", "w")
+
+    for mN in exprList:
+        f.write(mN + '\n')
+
+    f.close()
 
 if __name__ == "__main__":
     main()

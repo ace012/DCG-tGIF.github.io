@@ -31,14 +31,15 @@
     </script>
 
     <p>
-      <a href="./static/scripts/textureList.txt">Child List</a>
-      <a href="./static/scripts/textureListTeen.txt">Global version list</a>
+      <a href="./static/scripts/textureList.txt">[Child list]</a>
+      <a href="./static/scripts/textureListTeen.txt">[Global version list]</a>
+      <a href="./static/scripts/textureListExpr.txt">[Child list only with expressions]</a>
     </p>
 
     <div>
       mN   : <input id="mN" type="text" name="mN" autofocus=true>
       Spa file? <input id="isSpa" type="checkbox" name="isSpa">
-      Teen file? <input id="isTeen" type="checkbox" name="isTeen">
+      Global version? <input id="isTeen" type="checkbox" name="isTeen">
     </div>
     <div>width : <input id="width" type="number" name="width"></div>
     <div>height : <input id="height" type="number" name="height"></div>
@@ -83,6 +84,11 @@
     <div><button type="button" name="reload" onclick="javascript:reload();">Reload Child</button></div>
 
     <p></p>
+    <div>Enable Expressions</div>
+    <div id="exprs">
+    </div>
+
+    <p></p>
     <div>
       Capture & Save this image 
       <button type="button" name="saveImage" onclick="javascript:getPNGImage();">save image</button>
@@ -98,11 +104,6 @@
     <div>
       <button type="button" name="stopPreview" onclick="javascript:doDraw=doDraw?false:true;">stop motion</button>
       <button type="button" name="defaultPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionDefault);">default image (10 sec)</button>
-    </div>
-
-    <p></p>
-    <div>Enable Expressions</div>
-    <div id="exprs">
     </div>
 
     <p>Capture full motion images by real frame (typically 30 fps, 33.3 ms)</p>

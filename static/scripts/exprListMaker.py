@@ -1,7 +1,3 @@
-import os
-
-texturePath = "../Korean"
-
 def extractList(f):
     textList = []
 
@@ -24,18 +20,18 @@ def appendChild(mN, f, l1, l2):
 
 
 def main():
-    f = open("textureList.txt", 'w')
+    fin = open("textureListExprRaw.txt", 'r')
+    fout = open("textureListExpr.txt", 'w')
     txt1 = open("../../list.txt", 'r')
     txt2 = open("../../list_jp.txt", 'r')
 
     list1 = extractList(txt1)
     list2 = extractList(txt2)
 
-    for mN in next(os.walk(texturePath))[1]:
-        if mN[0] == 'c' or mN[0] == 'm' or mN[0] == 's':
-            appendChild(mN, f, list1, list2)
+    for mN in fin.readlines():
+        appendChild(mN.strip(), fout, list1, list2)
 
-    f.close()
+    fout.close()
 
 
 if __name__ == "__main__":
