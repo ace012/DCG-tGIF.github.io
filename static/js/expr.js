@@ -1,11 +1,12 @@
 var exprParams = []
 var exprParamsVal = []
+var exprParamsDef = []
 
 
 function enableExpr(key) {
   var exprId, exprVal, exprDef;
   var idx;
-  exprParamsVal.fill(0)
+  exprParamsVal.fill(null)
 
   if ("params" in exprs[key]) {
     var params = exprs[key].params
@@ -13,16 +14,26 @@ function enableExpr(key) {
     for (var i = 0; i < params.length; i++) {
       exprId = params[i].id
       exprVal = params[i].val
+      if ("def" in params[i])
+        exprDef = params[i].def
+      else
+        exprDef = 0
 
       idx = exprParams.indexOf(exprId)
       if (idx === -1) {
         exprParams.push(exprId)
         exprParamsVal.push(exprVal)
+        exprParamsDef.push(exprDef)
       }
       else {
         exprParamsVal[idx] = exprVal
       }
     }
+  }
+
+  for (var i = 0; i < exprParams.length; i++) {
+    if (exprParamsVal[i] === null)
+      exprParamsVal[i] = exprParamsDef[i]
   }
 
   for (var i = 0; i < motions.length; i++) {
