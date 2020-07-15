@@ -49,7 +49,7 @@ function getPNGsLQHS(grabLimit, grabRate, mtn) {
     motionMgr.startMotion(motionIdle);
   else if (mtn == 'hit')
     motionMgr.startMotion(motionHit);
-  else
+  else if (mtn == 'attack')
     motionMgr.startMotion(motionClick);
 
   var grabber = setInterval(function(){
@@ -75,12 +75,12 @@ function getPNGsSpaLQHS(grabLimit, grabRate, mtn) {
 
   if (mtn == 'idle')
     motionMgr.startMotion(motionIdle);
+  else if (mtn == 'touch')
+    motionMgr.startMotion(motionClick);
   else if (mtn == 'max')
     motionMgr.startMotion(motionMax);
   else if (mtn == 'maxtouch')
     motionMgr.startMotion(motionMaxtouch);
-  else
-    motionMgr.startMotion(motionClick);
 
   var grabber = setInterval(function(){
     if (count > grabLimit) {
