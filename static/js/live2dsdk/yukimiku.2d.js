@@ -136,10 +136,10 @@ function initModel() {
 
   loadBytes(getPath(dir, 'MOC.' + modelName + '.json'), 'text', function(buf, status) {
     // Remove when you try to local test
-    if (status !== 200) {
-      console.error('Failed to load (' + status + ') : ' + getPath(dir, 'MOC.' + modelName + '.json'))
-      return;
-    }
+//    if (status !== 200) {
+//      console.error('Failed to load (' + status + ') : ' + getPath(dir, 'MOC.' + modelName + '.json'))
+//      return;
+//    }
     var modelJson = JSON.parse(buf)
     initLive2d(dir, modelJson)
   })

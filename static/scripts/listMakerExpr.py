@@ -20,8 +20,8 @@ def appendChild(mN, f, l1, l2):
 
 
 def main():
-    fin = open("textureListExprRaw.txt", 'r')
-    fout = open("textureListExpr.txt", 'w')
+    fin = open("res/textureListExprRaw.txt", 'r')
+    fout = open("res/textureListExpr.txt", 'w')
     txt1 = open("../../list.txt", 'r')
     txt2 = open("../../list_jp.txt", 'r')
 

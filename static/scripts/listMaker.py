@@ -20,11 +20,11 @@ def appendChild(mN, f, l1, l2):
             break
 
     if not found:
-        f.write(mN)
+        f.write(mN + '\n')
 
 
 def main():
-    f = open("textureList.txt", 'w')
+    f = open("res/textureList.txt", 'w')
     txt1 = open("../../list.txt", 'r')
     txt2 = open("../../list_jp.txt", 'r')
 

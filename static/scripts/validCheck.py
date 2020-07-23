@@ -89,7 +89,7 @@ def main():
         else:
             print mN + ": unknown modelName"
 
-    f = open("textureListExprRaw.txt", "w")
+    f = open("res/textureListExprRaw.txt", "w")
 
     for mN in exprList:
         f.write(mN + '\n')
