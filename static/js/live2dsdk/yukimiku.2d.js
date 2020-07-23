@@ -281,7 +281,9 @@ function init(dir, canvas) {
 
       for (var i = 0; i < exprsJson.length; i++) {
         var exprName = exprsJson[i].name
-        loadBytes(getPath(dir, exprsJson[i].file), 'json', function (expr, status, path) {
+        loadBytes(getPath(dir, exprsJson[i].file), 'text', function (exprText, status, path) {
+          exprText = exprText.replace(/(00)/gi, '"00"')
+          expr = JSON.parse(exprText)
           exprName = path.split('/').pop().split('.')[0]
           exprs[exprName] = expr
           exprCount++;
