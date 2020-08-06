@@ -15,7 +15,7 @@ function pad(n, width, z) {
 function getResults(grabLimit, grabRate) {
   var zip = new JSZip();
   var searchParams = (new URL(window.location.href)).searchParams;
-  var childName = searchParams.get('mN') || "c445_02";
+  var childName = searchParams.get('mN') || "c455_10";
   for (var i = 0; i < shots.length; i++) {
     var filename = childName + "_" + pad(i, 4) + ".png";
     zip.file(filename, shots[i], {binary:true});
@@ -30,7 +30,7 @@ function getResults(grabLimit, grabRate) {
 }
 
 function getPNGImage() {
-  var childName = searchParams.get('mN') || "c445_02";
+  var childName = searchParams.get('mN') || "c455_10";
   var mS = searchParams.get('mS') || 1;
   var mX = searchParams.get('mX') || 0;
   var mY = searchParams.get('mY') || 0;
