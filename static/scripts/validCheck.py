@@ -80,7 +80,7 @@ def checkSpa(mN):
 
 def main():
     for mN in next(os.walk(texturePath))[1]:
-        if mN[0] == 'c' or mN[0] == 'm':
+        if mN[0] == 'c' or mN[0] == 'm' or mN[0] == 'x':
             checkChild(mN)
 
         elif mN[0] == 's':

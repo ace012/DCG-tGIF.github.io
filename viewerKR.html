@@ -49,9 +49,9 @@
 
     <script>
       var searchParams = (new URL(window.location.href)).searchParams;
-      document.getElementById('mN').value = searchParams.get('mN') || 'c451_10';
-      document.getElementById('width').value = searchParams.get('width') || 600;
-      document.getElementById('height').value = searchParams.get('height') || 600;
+      document.getElementById('mN').value = searchParams.get('mN') || 'xc124_01';
+      document.getElementById('width').value = searchParams.get('width') || 800;
+      document.getElementById('height').value = searchParams.get('height') || 800;
       document.getElementById('mS').value = searchParams.get('mS') || 1;
       document.getElementById('mX').value = searchParams.get('mX') || 0;
       document.getElementById('mY').value = searchParams.get('mY') || 0;
@@ -96,7 +96,7 @@
 
     <p></p>
     <div>Motion Preview</div>
-    <div>
+    <div id="previewButton">
       <button type="button" name="attackPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionClick);">attack motion</button>
       <button type="button" name="idlePreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionIdle);">idle motion</button>
       <button type="button" name="hitPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionHit);">hit motion</button>
@@ -108,7 +108,7 @@
 
     <p>Capture full motion images by real frame (typically 30 fps, 33.3 ms)</p>
 
-    <div>
+    <div id="HQLSButton">
       <button type="button" name="attackHQLS" onclick="javascript:getPNGsFull('attack');">get FULL attack motion PNGs</button>
       <button type="button" name="idleHQLS" onclick="javascript:getPNGsFull('idle');">get FULL idle motion PNGs</button>
       <button type="button" name="hitHQLS" onclick="javascript:getPNGsFull('hit');">get FULL hit motion PNGs</button>
@@ -119,7 +119,7 @@
     <div>grabCount     : <input id="grabLimit" type="number" name="grabLimit" value="100"></div>
     <div>grabRate (ms) : <input id="grabRate" type="number" name="grabRate" value="30"></div>
 
-    <div>
+    <div id="LQHSButton">
       <button type="button" name="attackLQHS" onclick="javascript:getPNGsLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'attack');">get attack motion PNGs by frame</button>
       <button type="button" name="idleLQHS" onclick="javascript:getPNGsLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'idle');">get idle motion PNGs by frame</button>
       <button type="button" name="hitLQHS" onclick="javascript:getPNGsLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'hit');">get hit motion PNGs by frame</button>
@@ -128,7 +128,9 @@
 
     <p></p>
     <div>Choose custom texture files (If you want to use):</div>
-    <div><input type="file" id="textures" name="textures" accept="image/png" multiple onchange="handleFiles(this.files)"></div>
+    <div>
+      <input type="file" id="textures" name="textures" accept="image/png" multiple onchange="handleFiles(this.files)">
+    </div>
 
     <p></p>
 

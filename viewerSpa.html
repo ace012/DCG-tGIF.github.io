@@ -45,8 +45,8 @@
     <script>
       var searchParams = (new URL(window.location.href)).searchParams;
       document.getElementById('mN').value = searchParams.get('mN') || 'sc417_01';
-      document.getElementById('width').value = searchParams.get('width') || 600;
-      document.getElementById('height').value = searchParams.get('height') || 600;
+      document.getElementById('width').value = searchParams.get('width') || 800;
+      document.getElementById('height').value = searchParams.get('height') || 800;
       document.getElementById('mS').value = searchParams.get('mS') || 1;
       document.getElementById('mX').value = searchParams.get('mX') || 0;
       document.getElementById('mY').value = searchParams.get('mY') || 0;
@@ -79,7 +79,7 @@
 
     <p></p>
     <div>Motion Preview</div>
-    <div>
+    <div id="previewButton">
       <button type="button" name="idlePreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionIdle_);switchSpa(false);">idle motion</button>
       <button type="button" name="touchPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionTouch);switchSpa(false);">touch motion</button>
       <button type="button" name="maxPreview" onclick="javascript:doDraw=true;motionMgr.startMotion(motionMax);switchSpa(true);">max motion</button>
@@ -93,7 +93,7 @@
 
     <p>Capture full motion images by real frame (typically 30 fps, 33.3 ms)</p>
 
-    <div>
+    <div id="HQLSButton">
       <button type="button" name="idleHQLS" onclick="javascript:getPNGsFullSpa('idle');">get FULL idle motion PNGs</button>
       <button type="button" name="touchHQLS" onclick="javascript:getPNGsFullSpa('touch');">get FULL touch motion PNGs</button>
       <button type="button" name="maxHQLS" onclick="javascript:getPNGsFullSpa('max');">get FULL max motion PNGs</button>
@@ -105,7 +105,7 @@
     <div>grabLimit     : <input id="grabLimit" type="number" name="grabLimit" value="100"></div>
     <div>grabRate (ms) : <input id="grabRate" type="number" name="grabRate" value="30"></div>
 
-    <div>
+    <div id="LQHSButton">
       <button type="button" name="idleLQHS" onclick="javascript:getPNGsSpaLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'idle');">get idle motion PNGs</button>
       <button type="button" name="touchLQHS" onclick="javascript:getPNGsSpaLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'touch');">get touch motion PNGs</button>
       <button type="button" name="maxLQHS" onclick="javascript:getPNGsSpaLQHS(document.getElementById('grabLimit').value, document.getElementById('grabRate').value, 'max');">get max motion PNGs</button>
@@ -115,7 +115,9 @@
 
     <p></p>
     <div>Choose custom texture files (If you want to use):</div>
-    <div><input type="file" id="textures" name="textures" accept="image/png" multiple onchange="handleFiles(this.files)"></div>
+    <div>
+      <input type="file" id="textures" name="textures" accept="image/png" multiple onchange="handleFiles(this.files)">
+    </div>
 
     <p></p>
 

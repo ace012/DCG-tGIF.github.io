@@ -1,13 +1,14 @@
 // default parameters
-var canvasSize = 600,
-    modelName = "c451_10",
+var canvasSize = 800,
+    modelName = "xc124_01",
     modelScale = 1.0,
     modelX = 0.0,
     modelY = 0.0,
     motionIdle = null, motionClick = null,
-    canvasWidth = 600, canvasHeight = 600
+    canvasWidth = 800, canvasHeight = 800
 
 var motions = []
+var motionEtc = []
 var exprs = {}
 
 
@@ -136,10 +137,10 @@ function initModel() {
 
   loadBytes(getPath(dir, 'MOC.' + modelName + '.json'), 'text', function(buf, status) {
     // Remove when you try to local test
-//    if (status !== 200) {
-//      console.error('Failed to load (' + status + ') : ' + getPath(dir, 'MOC.' + modelName + '.json'))
-//      return;
-//    }
+    if (status !== 200) {
+      console.error('Failed to load (' + status + ') : ' + getPath(dir, 'MOC.' + modelName + '.json'))
+      return;
+    }
     var modelJson = JSON.parse(buf)
     initLive2d(dir, modelJson)
   })
@@ -292,6 +293,44 @@ function init(dir, canvas) {
         })
       }
     }
+
+    var defaultMotions = ["idle", "attack", "hit"]
+    var idx = 0
+    var divPreviewButton = document.getElementById("previewButton")
+    var divHQLSButton = document.getElementById("HQLSButton")
+    var keys = []
+
+    for (var key in modelJson.motions) {
+      keys.push(key)
+    }
+    for (var i = 0; i < keys.length; i++) {
+      key = keys[i]
+      console.log(key)
+      if (defaultMotions.indexOf(key) == -1) {
+        var previewButton = document.createElement("button")
+        previewButton.textContent = key + " motion"
+        previewButton.name = key + "Preview"
+        previewButton.setAttribute("onclick", "javascript:doDraw=true;motionMgr.startMotion(motionEtc[" + idx.toString() + "]);")
+        divPreviewButton.appendChild(previewButton)
+
+        var HQLSButton = document.createElement("button")
+        HQLSButton.textContent = "get FULL " + key + " motion PNGs"
+        HQLSButton.name = key + "HQLS"
+        HQLSButton.setAttribute("onclick", "javascript:getPNGsFull('" + key + "');")
+        divHQLSButton.appendChild(HQLSButton)
+
+        file = modelJson.motions[key][0].file
+        loadBytes(getPath(dir, file), 'arraybuffer', function(buf, idx) {
+          motiontmp = new Live2DMotion.loadMotion(buf)
+          motiontmp._$eo = 0
+          motiontmp._$dP = 0
+          motions.push(motiontmp)
+          motionEtc.push(motiontmp)
+        })
+
+        idx = idx + 1
+      }
+    }
   }
 
   // spa motions
@@ -419,12 +458,12 @@ function loadBytes(path, mime, callback) {
   request.open('GET', path, true)
   request.responseType = mime
   request.onloadend = function() {
-//    if(request.status === 200) {
+    if(request.status === 200) {
       callback(request.response, request.status, path)
-//    }
-//    else {
-//      console.error('Failed to load (' + request.status + ') : ' + path)
-//    }
+    }
+    else {
+      console.error('Failed to load (' + request.status + ') : ' + path)
+    }
   }
   request.send(null)
 }

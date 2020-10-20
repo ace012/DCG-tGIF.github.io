@@ -97,21 +97,8 @@ function getPNGsSpaLQHS(grabLimit, grabRate, mtn) {
 function getPNGsFull(mtn) {
   shots = [];
   count = 0;
-  var motionFile;
+  var motionFile = modelJson.motions[mtn][0].file;
   var dir = "static/Korean/"
-
-  if (mtn == 'idle')
-    motionFile = modelJson.motions.idle[0].file
-  else if (mtn == 'hit')
-    motionFile = modelJson.motions.hit[0].file
-  else if (mtn == 'attack')
-    motionFile = modelJson.motions.attack[0].file
-  else if (mtn == 'touch')
-    motionFile = modelJson.motions.touch[0].file
-  else if (mtn == 'max')
-    motionFile = modelJson.motions.max[0].file
-  else if (mtn == 'maxtouch')
-    motionFile = modelJson.motions.maxtouch[0].file
 
   loadBytes(getPath(dir, motionFile), 'arraybuffer', function(buf) {
     motionGrab = new Live2DMotion.loadMotion(buf)

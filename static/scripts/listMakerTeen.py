@@ -32,7 +32,7 @@ def main():
     list2 = extractList(txt2)
 
     for mN in next(os.walk(texturePath))[1]:
-        if mN[0] == 'c' or mN[0] == 'm' or mN[0] == 's':
+        if mN[0] == 'c' or mN[0] == 'm' or mN[0] == 's' or mN[0] == 'x':
             appendChild(mN, f, list1, list2)
 
     f.close()
