@@ -4,6 +4,11 @@
 	"fade_out":0,
 	"params":[
 		{"id":"face1_op","val":-30,"def":-30},
-		{"id":"face2_op","val":-30,"def":-30}
+		{"id":"face2_op","val":-30,"def":-30},
+		{"id":"eye_hi_op","val":30,"def":30},
+		{"id":"eye_ball_op","val":30,"def":30},
+		{"id":"smile_op","val":-30,"def":-30},
+		{"id":"shock_op","val":-30,"def":-30},
+		{"id":"pain_op","val":-30,"def":-30}
 	]
 }
