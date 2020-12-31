@@ -118,7 +118,8 @@ function getPNGsFull(mtn) {
 
     motionMgr.startMotion(motionGrab);
 
-    var grabber = setInterval(function(){
+    var grabber = setTimeout(
+      setInterval(function(){
       if (count >= grabLimit) {
         clearInterval(grabber);
         getResults(grabLimit, grabFPS);
@@ -127,7 +128,7 @@ function getPNGsFull(mtn) {
       var img = window.atob(encodedImg);
       shots.push(img);
       count++;
-    }, grabRate);
+    }, grabRate), 50);
   })
 }
 
