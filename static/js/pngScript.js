@@ -118,17 +118,18 @@ function getPNGsFull(mtn) {
 
     motionMgr.startMotion(motionGrab);
 
-    var grabber = setTimeout(
-      setInterval(function(){
+    var grabber = setInterval(function(){
       if (count >= grabLimit) {
         clearInterval(grabber);
         getResults(grabLimit, grabFPS);
       }
-      var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
-      var img = window.atob(encodedImg);
-      shots.push(img);
-      count++;
-    }, grabRate), 50);
+      setTimeout(function(){
+        var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
+        var img = window.atob(encodedImg);
+        shots.push(img);
+        count++;
+      }, 100)
+    }, grabRate);
   })
 }
 
