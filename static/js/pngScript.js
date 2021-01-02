@@ -123,12 +123,10 @@ function getPNGsFull(mtn) {
         clearInterval(grabber);
         getResults(grabLimit, grabFPS);
       }
-      setTimeout(function(){
         var encodedImg = canvas.toDataURL("image/png").replace("data:image/png;base64,", "");
         var img = window.atob(encodedImg);
         shots.push(img);
         count++;
-      }, 100)
     }, grabRate);
   })
 }
