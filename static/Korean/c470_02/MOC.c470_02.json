@@ -2,9 +2,14 @@
   "version": "Sample 1.0.0",
   "model": "character.dat",
   "textures": [
-    "texture_00.png"
+    "texture_00.png",
+    "texture_01.png"
   ],
   "expressions": [
+    {
+      "name": "confused",
+      "file": "confused.exp.json"
+    },
     {
       "name": "idle",
       "file": "idle.exp.json"
@@ -17,28 +22,28 @@
   "motions": {
     "attack": [
       {
-        "file": "c472_01_attack.mtn",
+        "file": "c470_02_attack.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
     ],
     "banner": [
       {
-        "file": "c472_01_banner.mtn",
+        "file": "c470_02_banner.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
     ],
     "hit": [
       {
-        "file": "c472_01_hit.mtn",
+        "file": "c470_02_hit.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
     ],
     "idle": [
       {
-        "file": "c472_01_idle.mtn",
+        "file": "c470_02_idle.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
