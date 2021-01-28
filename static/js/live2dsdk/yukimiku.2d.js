@@ -1,6 +1,6 @@
 // default parameters
 var canvasSize = 800,
-    modelName = "c471_02",
+    modelName = "c489_02",
     modelScale = 1.0,
     modelX = 0.0,
     modelY = 0.0,

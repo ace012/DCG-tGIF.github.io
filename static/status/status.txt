@@ -6,45 +6,118 @@ Changes not staged for commit:
   (use "git checkout -- <file>..." to discard changes in working directory)
 
 	modified:   list.txt
-	modified:   static/Korean/c350_00/MOC.c350_00.json
-	modified:   static/Korean/c350_00/c350_00_attack.mtn
-	modified:   static/Korean/c350_00/c350_00_hit.mtn
-	modified:   static/Korean/c350_00/c350_00_idle.mtn
-	modified:   static/Korean/c350_00/character.dat
-	modified:   static/Korean/c350_00/texture_00.png
-	modified:   static/Korean/c469_01/MOC.c469_01.json
-	modified:   static/Korean/c469_01/character.dat
-	modified:   static/Korean/c469_01/texture_00.png
-	modified:   static/Korean/c470_01/character.dat
-	modified:   static/Korean/c471_01/MOC.c471_01.json
-	modified:   static/Korean/c471_01/c471_01_attack.mtn
-	modified:   static/Korean/c471_01/c471_01_hit.mtn
-	modified:   static/Korean/c471_01/c471_01_idle.mtn
-	modified:   static/Korean/c471_01/character.dat
-	modified:   static/Korean/c471_01/texture_00.png
-	modified:   static/Korean/c472_01/MOC.c472_01.json
-	modified:   static/Korean/c475_01/MOC.c475_01.json
-	modified:   static/Korean/c475_01/character.dat
-	modified:   static/Korean/c475_01/texture_00.png
+	modified:   static/Korean/c013_01/MOC.c013_01.json
+	modified:   static/Korean/c013_01/character.dat
+	modified:   static/Korean/c013_01/idle.exp.json
+	modified:   static/Korean/c013_01/pain.exp.json
+	modified:   static/Korean/c013_01/texture_00.png
+	modified:   static/Korean/c224_01/MOC.c224_01.json
+	modified:   static/Korean/c224_02/MOC.c224_02.json
+	modified:   static/Korean/c224_02/c224_02_attack.mtn
+	modified:   static/Korean/c224_02/c224_02_idle.mtn
+	modified:   static/Korean/c224_02/character.dat
+	modified:   static/Korean/c224_02/texture_00.png
+	modified:   static/Korean/c315_10/MOC.c315_10.json
+	modified:   static/Korean/c315_10/character.dat
+	modified:   static/Korean/c315_10/texture_00.png
+	modified:   static/Korean/c361_10/MOC.c361_10.json
+	modified:   static/Korean/c361_10/character.dat
+	modified:   static/Korean/c361_10/idle.exp.json
+	modified:   static/Korean/c361_10/pain.exp.json
+	modified:   static/Korean/c361_10/texture_00.png
+	modified:   static/Korean/c361_10/texture_01.png
+	modified:   static/Korean/c362_01/MOC.c362_01.json
+	modified:   static/Korean/c362_01/character.dat
+	modified:   static/Korean/c362_01/fury.exp.json
+	modified:   static/Korean/c362_01/idle.exp.json
+	modified:   static/Korean/c362_01/sad.exp.json
+	modified:   static/Korean/c362_01/smile.exp.json
+	modified:   static/Korean/c362_01/texture_00.png
+	modified:   static/Korean/c429_00/angry.exp.json
+	modified:   static/Korean/c429_00/c429_00_attack.mtn
+	modified:   static/Korean/c429_00/c429_00_hit.mtn
+	modified:   static/Korean/c429_00/c429_00_idle.mtn
+	modified:   static/Korean/c429_00/character.dat
+	modified:   static/Korean/c429_00/confused.exp.json
+	modified:   static/Korean/c429_00/idle.exp.json
+	modified:   static/Korean/c429_00/serious.exp.json
+	modified:   static/Korean/c432_01/MOC.c432_01.json
+	modified:   static/Korean/c432_01/character.dat
+	modified:   static/Korean/c432_01/texture_00.png
+	modified:   static/Korean/c432_01/texture_01.png
+	modified:   static/Korean/c444_01/MOC.c444_01.json
+	modified:   static/Korean/c444_01/angry.exp.json
+	modified:   static/Korean/c444_01/character.dat
+	modified:   static/Korean/c444_01/confused.exp.json
+	modified:   static/Korean/c444_01/fury.exp.json
+	modified:   static/Korean/c444_01/idle.exp.json
+	modified:   static/Korean/c444_01/pain.exp.json
+	modified:   static/Korean/c444_01/serious.exp.json
+	modified:   static/Korean/c444_01/sigh.exp.json
+	modified:   static/Korean/c444_01/smile.exp.json
+	modified:   static/Korean/c444_01/tempt.exp.json
+	modified:   static/Korean/c444_01/texture_00.png
+	modified:   static/Korean/c464_01/MOC.c464_01.json
+	modified:   static/Korean/c464_01/character.dat
+	modified:   static/Korean/c464_01/texture_00.png
+	modified:   static/Korean/c473_02/MOC.c473_02.json
+	modified:   static/Korean/c473_02/angry.exp.json
+	modified:   static/Korean/c473_02/character.dat
+	modified:   static/Korean/c473_02/idle.exp.json
+	modified:   static/Korean/c473_02/serious.exp.json
+	modified:   static/Korean/c473_02/smile.exp.json
+	modified:   static/Korean/c473_02/texture_00.png
+	modified:   static/Korean/c473_02/texture_01.png
+	modified:   static/Korean/c474_01/MOC.c474_01.json
+	modified:   static/js/live2dsdk/yukimiku.2d.js
 	modified:   static/scripts/res/textureList.txt
 	modified:   static/scripts/res/textureListExpr.txt
 	modified:   static/scripts/res/textureListExprRaw.txt
 	modified:   static/status/diff.txt
 	modified:   static/status/status.txt
+	modified:   viewerKR.html
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	static/Korean/c350_00/cry.exp.json
-	static/Korean/c469_01/idle.exp.json
-	static/Korean/c469_01/serious.exp.json
-	static/Korean/c470_02/
-	static/Korean/c471_01/angry.exp.json
-	static/Korean/c471_01/idle.exp.json
-	static/Korean/c471_01/serious.exp.json
-	static/Korean/c472_01/c472_01_banner.mtn
-	static/Korean/c472_02/
-	static/Korean/c475_01/idle.exp.json
-	static/Korean/c475_01/serious.exp.json
+	static/Korean/c013_01/angry.exp.json
+	static/Korean/c013_01/confused.exp.json
+	static/Korean/c224_01/c224_01_banner.mtn
+	static/Korean/c224_02/c224_02_hit.mtn
+	static/Korean/c224_02/idle.exp.json
+	static/Korean/c224_02/superangry.exp.json
+	static/Korean/c315_10/angry.exp.json
+	static/Korean/c315_10/idle.exp.json
+	static/Korean/c361_10/angry.exp.json
+	static/Korean/c361_10/confused.exp.json
+	static/Korean/c362_01/confused.exp.json
+	static/Korean/c362_01/cry.exp.json
+	static/Korean/c362_01/pain.exp.json
+	static/Korean/c362_01/serious.exp.json
+	static/Korean/c425_01/
+	static/Korean/c432_01/idle.exp.json
+	static/Korean/c432_01/pain.exp.json
+	static/Korean/c432_01/smile.exp.json
+	static/Korean/c438_11/
+	static/Korean/c438_12/
+	static/Korean/c444_01/nonsense.exp.json
+	static/Korean/c463_01/
+	static/Korean/c463_02/
+	static/Korean/c464_01/pain.exp.json
+	static/Korean/c467_01/
+	static/Korean/c467_02/
+	static/Korean/c473_02/pain.exp.json
+	static/Korean/c474_01/c474_01_banner.mtn
+	static/Korean/c489_01/
+	static/Korean/c489_02/
+	static/Korean/c489_10/
+	static/Korean/c489_11/
+	static/Korean/c489_87/
+	static/Korean/c489_88/
+	static/Korean/c489_89/
+	static/Korean/sc334_01/
+	static/Korean/sc440_01/
+	static/Korean/sc447_01/
+	static/Korean/sc462_01/
 
 no changes added to commit (use "git add" and/or "git commit -a")
