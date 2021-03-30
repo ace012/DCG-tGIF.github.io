@@ -2696,6 +2696,7 @@ Changes to be committed:
 	modified:   static/scripts/res/textureListExprRaw.txt
 	modified:   static/scripts/validCheck.py
 	modified:   static/status/status.txt
+	modified:   static/status/status_after_commit.txt
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
