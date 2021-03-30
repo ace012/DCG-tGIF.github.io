@@ -8,28 +8,28 @@
   "motions": {
     "idle": [
       {
-        "file": "sm0148_01_idle.mtn",
+        "file": "sm148_01_idle.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
     ],
     "max": [
       {
-        "file": "sm0148_01_max.mtn",
+        "file": "sm148_01_max.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
     ],
     "maxtouch": [
       {
-        "file": "sm0148_01_maxtouch.mtn",
+        "file": "sm148_01_maxtouch.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
     ],
     "touch": [
       {
-        "file": "sm0148_01_touch.mtn",
+        "file": "sm148_01_touch.mtn",
         "fade_in": 0,
         "fade_out": 0
       }
