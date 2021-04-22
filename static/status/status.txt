@@ -6,19 +6,8 @@ Changes not staged for commit:
   (use "git checkout -- <file>..." to discard changes in working directory)
 
 	modified:   list.txt
-	modified:   static/Korean/c425_01/MOC.c425_01.json
-	modified:   static/Korean/c425_01/_header
-	modified:   static/Korean/c425_01/character.dat
-	modified:   static/Korean/c425_01/texture_00.png
-	modified:   static/Korean/c447_01/MOC.c447_01.json
-	modified:   static/Korean/c447_01/_header
-	modified:   static/Korean/c481_00/MOC.c481_00.json
-	modified:   static/Korean/c481_00/_header
-	modified:   static/Korean/c481_00/c481_00_attack.mtn
-	modified:   static/Korean/c481_00/c481_00_hit.mtn
-	modified:   static/Korean/c481_00/c481_00_idle.mtn
-	modified:   static/Korean/c481_00/character.dat
-	modified:   static/Korean/c481_00/texture_00.png
+	modified:   static/Korean/c428_01/MOC.c428_01.json
+	modified:   static/Korean/c428_01/_header
 	modified:   static/scripts/res/textureList.txt
 	modified:   static/scripts/res/textureListExpr.txt
 	modified:   static/scripts/res/textureListExprRaw.txt
@@ -28,15 +17,18 @@ Changes not staged for commit:
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	static/Korean/c425_01/c425_01_hit.mtn
-	static/Korean/c447_01/c447_01_banner.mtn
-	static/Korean/c481_00/serious.exp.json
-	static/Korean/c483_01/
-	static/Korean/c483_02/
-	static/Korean/c488_00/
-	static/Korean/c488_01/
-	static/Korean/c488_02/
-	static/Korean/c488_20/
-	static/scripts/diff.sh
+	static/Korean/c428_01/c428_01_banner.mtn
+	static/Korean/c493_00/
+	static/Korean/c493_01/
+	static/Korean/c493_02/
+	static/Korean/c493_88/
+	static/Korean/c494_00/
+	static/Korean/c494_01/
+	static/Korean/c494_02/
+	static/Korean/sc073_01/
+	static/Korean/sc206_01/
+	static/Korean/sc218_01/
+	static/Korean/sc468_01/
+	static/Korean/sc476_01/
 
 no changes added to commit (use "git add" and/or "git commit -a")

@@ -1,11 +1,15 @@
-Files /mnt/d/dc/krcharpack/character/c425_01.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c425_01.pck differ
-Files /mnt/d/dc/krcharpack/character/c447_01.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c447_01.pck differ
-Files /mnt/d/dc/krcharpack/character/c481_00.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c481_00.pck differ
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c483_01.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c483_02.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c488_00.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c488_01.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c488_02.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c488_20.pck
+Files /mnt/d/dc/krcharpack/character/c428_01.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c428_01.pck differ
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c493_00.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c493_01.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c493_02.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c493_88.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c494_00.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c494_01.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c494_02.pck
 Files /mnt/d/dc/krcharpack/character/image.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/image.pck differ
 Files /mnt/d/dc/krcharpack/character/model_info.json and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/model_info.json differ
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: sc073_01.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: sc206_01.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: sc218_01.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: sc468_01.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: sc476_01.pck
