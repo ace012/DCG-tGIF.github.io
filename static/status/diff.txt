@@ -1,22 +1,10 @@
-Files /mnt/d/dc/krcharpack/character/c012_00.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c012_00.pck differ
-Files /mnt/d/dc/krcharpack/character/c031_01.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c031_01.pck differ
-Files /mnt/d/dc/krcharpack/character/c082_00.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c082_00.pck differ
-Files /mnt/d/dc/krcharpack/character/c121_00.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c121_00.pck differ
-Files /mnt/d/dc/krcharpack/character/c174_00.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c174_00.pck differ
-Files /mnt/d/dc/krcharpack/character/c208_00.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c208_00.pck differ
-Files /mnt/d/dc/krcharpack/character/c221_00.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c221_00.pck differ
-Files /mnt/d/dc/krcharpack/character/c235_00.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c235_00.pck differ
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c495_00.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c495_01.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c495_02.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c496_00.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c496_01.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c496_02.pck
+Files /mnt/d/dc/krcharpack/character/c318_00.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/c318_00.pck differ
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c503_01.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c503_02.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c503_88.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c504_00.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c504_01.pck
+Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: c504_02.pck
 Files /mnt/d/dc/krcharpack/character/image.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/image.pck differ
-Files /mnt/d/dc/krcharpack/character/m059_00.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/m059_00.pck differ
 Files /mnt/d/dc/krcharpack/character/model_info.json and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/model_info.json differ
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: sc479_01.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: sc480_01.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: sc481_01.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: sc482_01.pck
-Only in /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/: sm215_01.pck
+Files /mnt/d/dc/krcharpack/character/xm056_01.pck and /mnt/c/Users/Kang/Documents/XuanZhi/Pictures/new/character/xm056_01.pck differ

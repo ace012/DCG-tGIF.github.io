@@ -1,178 +1,99 @@
 On branch master
-Your branch is ahead of 'origin/master' by 1 commit.
-  (use "git push" to publish your local commits)
+Your branch is up to date with 'origin/master'.
 
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
 	modified:   list.txt
-	modified:   static/Korean/c012_00/MOC.c012_00.json
-	modified:   static/Korean/c012_00/_header
-	modified:   static/Korean/c012_00/c012_00_attack.mtn
-	new file:   static/Korean/c012_00/c012_00_hit.mtn
-	modified:   static/Korean/c012_00/c012_00_idle.mtn
-	modified:   static/Korean/c031_01/MOC.c031_01.json
-	modified:   static/Korean/c031_01/_header
-	new file:   static/Korean/c031_01/angry.exp.json
-	modified:   static/Korean/c031_01/c031_01_attack.mtn
-	modified:   static/Korean/c031_01/c031_01_hit.mtn
-	modified:   static/Korean/c031_01/c031_01_idle.mtn
-	modified:   static/Korean/c031_01/character.dat
-	new file:   static/Korean/c031_01/confused.exp.json
-	new file:   static/Korean/c031_01/idle.exp.json
-	new file:   static/Korean/c031_01/serious.exp.json
-	modified:   static/Korean/c031_01/texture_00.png
-	modified:   static/Korean/c082_00/MOC.c082_00.json
-	modified:   static/Korean/c082_00/_header
-	modified:   static/Korean/c082_00/c082_00_attack.mtn
-	new file:   static/Korean/c082_00/c082_00_hit.mtn
-	modified:   static/Korean/c082_00/c082_00_idle.mtn
-	modified:   static/Korean/c082_00/character.dat
-	modified:   static/Korean/c082_00/texture_00.png
-	modified:   static/Korean/c121_00/MOC.c121_00.json
-	modified:   static/Korean/c121_00/_header
-	modified:   static/Korean/c121_00/c121_00_attack.mtn
-	new file:   static/Korean/c121_00/c121_00_hit.mtn
-	modified:   static/Korean/c121_00/c121_00_idle.mtn
-	modified:   static/Korean/c121_00/character.dat
-	modified:   static/Korean/c121_00/texture_00.png
-	modified:   static/Korean/c174_00/MOC.c174_00.json
-	modified:   static/Korean/c174_00/_header
-	modified:   static/Korean/c174_00/c174_00_attack.mtn
-	new file:   static/Korean/c174_00/c174_00_hit.mtn
-	modified:   static/Korean/c174_00/c174_00_idle.mtn
-	modified:   static/Korean/c174_00/character.dat
-	modified:   static/Korean/c174_00/texture_00.png
-	modified:   static/Korean/c208_00/MOC.c208_00.json
-	modified:   static/Korean/c208_00/_header
-	modified:   static/Korean/c208_00/c208_00_attack.mtn
-	new file:   static/Korean/c208_00/c208_00_hit.mtn
-	modified:   static/Korean/c208_00/c208_00_idle.mtn
-	modified:   static/Korean/c208_00/character.dat
-	modified:   static/Korean/c208_00/texture_00.png
-	modified:   static/Korean/c221_00/MOC.c221_00.json
-	modified:   static/Korean/c221_00/_header
-	modified:   static/Korean/c221_00/c221_00_attack.mtn
-	new file:   static/Korean/c221_00/c221_00_hit.mtn
-	modified:   static/Korean/c221_00/c221_00_idle.mtn
-	modified:   static/Korean/c221_00/character.dat
-	modified:   static/Korean/c221_00/texture_00.png
-	modified:   static/Korean/c235_00/MOC.c235_00.json
-	modified:   static/Korean/c235_00/_header
-	modified:   static/Korean/c235_00/c235_00_attack.mtn
-	new file:   static/Korean/c235_00/c235_00_hit.mtn
-	modified:   static/Korean/c235_00/c235_00_idle.mtn
-	modified:   static/Korean/c235_00/character.dat
-	modified:   static/Korean/c235_00/texture_00.png
-	new file:   static/Korean/c495_00/MOC.c495_00.json
-	new file:   static/Korean/c495_00/_header
-	new file:   static/Korean/c495_00/angry.exp.json
-	new file:   static/Korean/c495_00/c495_00_attack.mtn
-	new file:   static/Korean/c495_00/c495_00_hit.mtn
-	new file:   static/Korean/c495_00/c495_00_idle.mtn
-	new file:   static/Korean/c495_00/character.dat
-	new file:   static/Korean/c495_00/idle.exp.json
-	new file:   static/Korean/c495_00/sad.exp.json
-	new file:   static/Korean/c495_00/texture_00.png
-	new file:   static/Korean/c495_01/MOC.c495_01.json
-	new file:   static/Korean/c495_01/_header
-	new file:   static/Korean/c495_01/angry.exp.json
-	new file:   static/Korean/c495_01/c495_01_attack.mtn
-	new file:   static/Korean/c495_01/c495_01_banner.mtn
-	new file:   static/Korean/c495_01/c495_01_hit.mtn
-	new file:   static/Korean/c495_01/c495_01_idle.mtn
-	new file:   static/Korean/c495_01/character.dat
-	new file:   static/Korean/c495_01/idle.exp.json
-	new file:   static/Korean/c495_01/pretense.exp.json
-	new file:   static/Korean/c495_01/texture_00.png
-	new file:   static/Korean/c495_01/texture_01.png
-	new file:   static/Korean/c495_02/MOC.c495_02.json
-	new file:   static/Korean/c495_02/_header
-	new file:   static/Korean/c495_02/c495_02_attack.mtn
-	new file:   static/Korean/c495_02/c495_02_hit.mtn
-	new file:   static/Korean/c495_02/c495_02_idle.mtn
-	new file:   static/Korean/c495_02/character.dat
-	new file:   static/Korean/c495_02/texture_00.png
-	new file:   static/Korean/c495_02/texture_01.png
-	new file:   static/Korean/c496_00/MOC.c496_00.json
-	new file:   static/Korean/c496_00/_header
-	new file:   static/Korean/c496_00/c496_00_attack.mtn
-	new file:   static/Korean/c496_00/c496_00_hit.mtn
-	new file:   static/Korean/c496_00/c496_00_idle.mtn
-	new file:   static/Korean/c496_00/character.dat
-	new file:   static/Korean/c496_00/idle.exp.json
-	new file:   static/Korean/c496_00/sad.exp.json
-	new file:   static/Korean/c496_00/texture_00.png
-	new file:   static/Korean/c496_01/MOC.c496_01.json
-	new file:   static/Korean/c496_01/_header
-	new file:   static/Korean/c496_01/angry.exp.json
-	new file:   static/Korean/c496_01/c496_01_attack.mtn
-	new file:   static/Korean/c496_01/c496_01_banner.mtn
-	new file:   static/Korean/c496_01/c496_01_hit.mtn
-	new file:   static/Korean/c496_01/c496_01_idle.mtn
-	new file:   static/Korean/c496_01/character.dat
-	new file:   static/Korean/c496_01/confused.exp.json
-	new file:   static/Korean/c496_01/idle.exp.json
-	new file:   static/Korean/c496_01/serious.exp.json
-	new file:   static/Korean/c496_01/texture_00.png
-	new file:   static/Korean/c496_02/MOC.c496_02.json
-	new file:   static/Korean/c496_02/_header
-	new file:   static/Korean/c496_02/c496_02_attack.mtn
-	new file:   static/Korean/c496_02/c496_02_hit.mtn
-	new file:   static/Korean/c496_02/c496_02_idle.mtn
-	new file:   static/Korean/c496_02/character.dat
-	new file:   static/Korean/c496_02/texture_00.png
-	new file:   static/Korean/c496_02/texture_01.png
-	modified:   static/Korean/m059_00/MOC.m059_00.json
-	modified:   static/Korean/m059_00/_header
-	modified:   static/Korean/m059_00/m059_00_attack.mtn
-	new file:   static/Korean/m059_00/m059_00_hit.mtn
-	modified:   static/Korean/m059_00/m059_00_idle.mtn
-	new file:   static/Korean/sc479_01/MOC.sc479_01.json
-	new file:   static/Korean/sc479_01/_header
-	new file:   static/Korean/sc479_01/character.dat
-	new file:   static/Korean/sc479_01/physics.json
-	new file:   static/Korean/sc479_01/sc479_01_idle.mtn
-	new file:   static/Korean/sc479_01/sc479_01_max.mtn
-	new file:   static/Korean/sc479_01/sc479_01_maxtouch.mtn
-	new file:   static/Korean/sc479_01/sc479_01_touch.mtn
-	new file:   static/Korean/sc479_01/texture_00.png
-	new file:   static/Korean/sc480_01/MOC.sc480_01.json
-	new file:   static/Korean/sc480_01/_header
-	new file:   static/Korean/sc480_01/character.dat
-	new file:   static/Korean/sc480_01/physics.json
-	new file:   static/Korean/sc480_01/sc480_01_idle.mtn
-	new file:   static/Korean/sc480_01/sc480_01_max.mtn
-	new file:   static/Korean/sc480_01/sc480_01_maxtouch.mtn
-	new file:   static/Korean/sc480_01/sc480_01_touch.mtn
-	new file:   static/Korean/sc480_01/texture_00.png
-	new file:   static/Korean/sc481_01/MOC.sc481_01.json
-	new file:   static/Korean/sc481_01/_header
-	new file:   static/Korean/sc481_01/character.dat
-	new file:   static/Korean/sc481_01/physics.json
-	new file:   static/Korean/sc481_01/sc481_01_idle.mtn
-	new file:   static/Korean/sc481_01/sc481_01_max.mtn
-	new file:   static/Korean/sc481_01/sc481_01_maxtouch.mtn
-	new file:   static/Korean/sc481_01/sc481_01_touch.mtn
-	new file:   static/Korean/sc481_01/texture_00.png
-	new file:   static/Korean/sc482_01/MOC.sc482_01.json
-	new file:   static/Korean/sc482_01/_header
-	new file:   static/Korean/sc482_01/character.dat
-	new file:   static/Korean/sc482_01/physics.json
-	new file:   static/Korean/sc482_01/sc482_01_idle.mtn
-	new file:   static/Korean/sc482_01/sc482_01_max.mtn
-	new file:   static/Korean/sc482_01/sc482_01_maxtouch.mtn
-	new file:   static/Korean/sc482_01/sc482_01_touch.mtn
-	new file:   static/Korean/sc482_01/texture_00.png
-	new file:   static/Korean/sm215_01/MOC.sm215_01.json
-	new file:   static/Korean/sm215_01/_header
-	new file:   static/Korean/sm215_01/character.dat
-	new file:   static/Korean/sm215_01/physics.json
-	new file:   static/Korean/sm215_01/sm215_01_idle.mtn
-	new file:   static/Korean/sm215_01/sm215_01_max.mtn
-	new file:   static/Korean/sm215_01/sm215_01_maxtouch.mtn
-	new file:   static/Korean/sm215_01/sm215_01_touch.mtn
-	new file:   static/Korean/sm215_01/texture_00.png
+	modified:   static/Korean/c318_00/MOC.c318_00.json
+	modified:   static/Korean/c318_00/_header
+	modified:   static/Korean/c318_00/c318_00_attack.mtn
+	modified:   static/Korean/c318_00/c318_00_hit.mtn
+	modified:   static/Korean/c318_00/c318_00_idle.mtn
+	modified:   static/Korean/c318_00/character.dat
+	new file:   static/Korean/c318_00/confused.exp.json
+	new file:   static/Korean/c318_00/idle.exp.json
+	new file:   static/Korean/c318_00/irritation.exp.json
+	new file:   static/Korean/c318_00/serious.exp.json
+	new file:   static/Korean/c318_00/sigh.exp.json
+	modified:   static/Korean/c318_00/texture_00.png
+	new file:   static/Korean/c503_01/MOC.c503_01.json
+	new file:   static/Korean/c503_01/_header
+	new file:   static/Korean/c503_01/angry.exp.json
+	new file:   static/Korean/c503_01/c503_01_attack.mtn
+	new file:   static/Korean/c503_01/c503_01_banner.mtn
+	new file:   static/Korean/c503_01/c503_01_hit.mtn
+	new file:   static/Korean/c503_01/c503_01_idle.mtn
+	new file:   static/Korean/c503_01/character.dat
+	new file:   static/Korean/c503_01/haah.exp.json
+	new file:   static/Korean/c503_01/idle.exp.json
+	new file:   static/Korean/c503_01/serious.exp.json
+	new file:   static/Korean/c503_01/tempt.exp.json
+	new file:   static/Korean/c503_01/texture_00.png
+	new file:   static/Korean/c503_02/MOC.c503_02.json
+	new file:   static/Korean/c503_02/_header
+	new file:   static/Korean/c503_02/c503_02_attack.mtn
+	new file:   static/Korean/c503_02/c503_02_hit.mtn
+	new file:   static/Korean/c503_02/c503_02_idle.mtn
+	new file:   static/Korean/c503_02/character.dat
+	new file:   static/Korean/c503_02/texture_00.png
+	new file:   static/Korean/c503_02/texture_01.png
+	new file:   static/Korean/c503_88/MOC.c503_88.json
+	new file:   static/Korean/c503_88/_header
+	new file:   static/Korean/c503_88/c503_88_attack.mtn
+	new file:   static/Korean/c503_88/c503_88_hit.mtn
+	new file:   static/Korean/c503_88/c503_88_idle.mtn
+	new file:   static/Korean/c503_88/character.dat
+	new file:   static/Korean/c503_88/texture_00.png
+	new file:   static/Korean/c503_88/texture_01.png
+	new file:   static/Korean/c504_00/MOC.c504_00.json
+	new file:   static/Korean/c504_00/_header
+	new file:   static/Korean/c504_00/angry.exp.json
+	new file:   static/Korean/c504_00/c504_00_attack.mtn
+	new file:   static/Korean/c504_00/c504_00_hit.mtn
+	new file:   static/Korean/c504_00/c504_00_idle.mtn
+	new file:   static/Korean/c504_00/character.dat
+	new file:   static/Korean/c504_00/confused.exp.json
+	new file:   static/Korean/c504_00/haah.exp.json
+	new file:   static/Korean/c504_00/idle.exp.json
+	new file:   static/Korean/c504_00/pretense.exp.json
+	new file:   static/Korean/c504_00/texture_00.png
+	new file:   static/Korean/c504_01/MOC.c504_01.json
+	new file:   static/Korean/c504_01/_header
+	new file:   static/Korean/c504_01/affair.exp.json
+	new file:   static/Korean/c504_01/angry.exp.json
+	new file:   static/Korean/c504_01/c504_01_attack.mtn
+	new file:   static/Korean/c504_01/c504_01_banner.mtn
+	new file:   static/Korean/c504_01/c504_01_hit.mtn
+	new file:   static/Korean/c504_01/c504_01_idle.mtn
+	new file:   static/Korean/c504_01/character.dat
+	new file:   static/Korean/c504_01/confused.exp.json
+	new file:   static/Korean/c504_01/idle.exp.json
+	new file:   static/Korean/c504_01/joy.exp.json
+	new file:   static/Korean/c504_01/sulky.exp.json
+	new file:   static/Korean/c504_01/texture_00.png
+	new file:   static/Korean/c504_02/MOC.c504_02.json
+	new file:   static/Korean/c504_02/_header
+	new file:   static/Korean/c504_02/c504_02_attack.mtn
+	new file:   static/Korean/c504_02/c504_02_hit.mtn
+	new file:   static/Korean/c504_02/c504_02_idle.mtn
+	new file:   static/Korean/c504_02/character.dat
+	new file:   static/Korean/c504_02/texture_00.png
+	new file:   static/Korean/c504_02/texture_01.png
+	modified:   static/Korean/xm056_01/MOC.xm056_01.json
+	modified:   static/Korean/xm056_01/_header
+	modified:   static/Korean/xm056_01/character.dat
+	modified:   static/Korean/xm056_01/texture_00.png
+	modified:   static/Korean/xm056_01/xm056_01_die.mtn
+	modified:   static/Korean/xm056_01/xm056_01_hit.mtn
+	modified:   static/Korean/xm056_01/xm056_01_idle.mtn
+	new file:   static/Korean/xm056_01/xm056_01_lose.mtn
+	new file:   static/Korean/xm056_01/xm056_01_move.mtn
+	new file:   static/Korean/xm056_01/xm056_01_reaction.mtn
+	new file:   static/Korean/xm056_01/xm056_01_skill1_00.mtn
+	new file:   static/Korean/xm056_01/xm056_01_skill2_00.mtn
+	new file:   static/Korean/xm056_01/xm056_01_stun.mtn
+	new file:   static/Korean/xm056_01/xm056_01_win.mtn
 	modified:   static/js/live2dsdk/yukimiku.2d.js
 	modified:   static/scripts/res/textureList.txt
 	modified:   static/scripts/res/textureListExpr.txt
