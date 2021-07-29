@@ -1,89 +1,37 @@
 On branch master
 Your branch is up to date with 'origin/master'.
 
-Changes to be committed:
-  (use "git reset HEAD <file>..." to unstage)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
 	modified:   list.txt
-	modified:   static/Korean/c503_01/MOC.c503_01.json
-	modified:   static/Korean/c503_01/_header
-	modified:   static/Korean/c503_01/c503_01_attack.mtn
-	modified:   static/Korean/c503_01/c503_01_hit.mtn
-	modified:   static/Korean/c503_01/c503_01_idle.mtn
+	modified:   static/Korean/c454_01/MOC.c454_01.json
+	modified:   static/Korean/c454_01/_header
 	modified:   static/Korean/c503_01/character.dat
-	new file:   static/Korean/c503_01/confused.exp.json
-	modified:   static/Korean/c503_01/texture_00.png
-	new file:   static/Korean/c505_00/MOC.c505_00.json
-	new file:   static/Korean/c505_00/_header
-	new file:   static/Korean/c505_00/c505_00_attack.mtn
-	new file:   static/Korean/c505_00/c505_00_hit.mtn
-	new file:   static/Korean/c505_00/c505_00_idle.mtn
-	new file:   static/Korean/c505_00/character.dat
-	new file:   static/Korean/c505_00/idle.exp.json
-	new file:   static/Korean/c505_00/irritation.exp.json
-	new file:   static/Korean/c505_00/serious.exp.json
-	new file:   static/Korean/c505_00/texture_00.png
-	new file:   static/Korean/c505_01/MOC.c505_01.json
-	new file:   static/Korean/c505_01/_header
-	new file:   static/Korean/c505_01/c505_01_attack.mtn
-	new file:   static/Korean/c505_01/c505_01_banner.mtn
-	new file:   static/Korean/c505_01/c505_01_hit.mtn
-	new file:   static/Korean/c505_01/c505_01_idle.mtn
-	new file:   static/Korean/c505_01/character.dat
-	new file:   static/Korean/c505_01/idle.exp.json
-	new file:   static/Korean/c505_01/serious.exp.json
-	new file:   static/Korean/c505_01/texture_00.png
-	new file:   static/Korean/c505_02/MOC.c505_02.json
-	new file:   static/Korean/c505_02/_header
-	new file:   static/Korean/c505_02/c505_02_attack.mtn
-	new file:   static/Korean/c505_02/c505_02_hit.mtn
-	new file:   static/Korean/c505_02/c505_02_idle.mtn
-	new file:   static/Korean/c505_02/character.dat
-	new file:   static/Korean/c505_02/texture_00.png
-	new file:   static/Korean/c505_10/MOC.c505_10.json
-	new file:   static/Korean/c505_10/_header
-	new file:   static/Korean/c505_10/c505_10_attack.mtn
-	new file:   static/Korean/c505_10/c505_10_hit.mtn
-	new file:   static/Korean/c505_10/c505_10_idle.mtn
-	new file:   static/Korean/c505_10/character.dat
-	new file:   static/Korean/c505_10/texture_00.png
-	new file:   static/Korean/c505_10/texture_01.png
-	new file:   static/Korean/c506_00/MOC.c506_00.json
-	new file:   static/Korean/c506_00/_header
-	new file:   static/Korean/c506_00/c506_00_attack.mtn
-	new file:   static/Korean/c506_00/c506_00_hit.mtn
-	new file:   static/Korean/c506_00/c506_00_idle.mtn
-	new file:   static/Korean/c506_00/character.dat
-	new file:   static/Korean/c506_00/confused.exp.json
-	new file:   static/Korean/c506_00/idle.exp.json
-	new file:   static/Korean/c506_00/smile.exp.json
-	new file:   static/Korean/c506_00/surprise.exp.json
-	new file:   static/Korean/c506_00/texture_00.png
-	new file:   static/Korean/c506_01/MOC.c506_01.json
-	new file:   static/Korean/c506_01/_header
-	new file:   static/Korean/c506_01/c506_01_attack.mtn
-	new file:   static/Korean/c506_01/c506_01_banner.mtn
-	new file:   static/Korean/c506_01/c506_01_hit.mtn
-	new file:   static/Korean/c506_01/c506_01_idle.mtn
-	new file:   static/Korean/c506_01/character.dat
-	new file:   static/Korean/c506_01/texture_00.png
-	new file:   static/Korean/c506_02/MOC.c506_02.json
-	new file:   static/Korean/c506_02/_header
-	new file:   static/Korean/c506_02/c506_02_attack.mtn
-	new file:   static/Korean/c506_02/c506_02_hit.mtn
-	new file:   static/Korean/c506_02/c506_02_idle.mtn
-	new file:   static/Korean/c506_02/character.dat
-	new file:   static/Korean/c506_02/texture_00.png
+	modified:   static/Korean/c504_00/MOC.c504_00.json
+	modified:   static/Korean/c504_00/_header
+	modified:   static/Korean/c504_00/character.dat
+	modified:   static/Korean/c504_00/texture_00.png
 	modified:   static/scripts/res/textureList.txt
 	modified:   static/scripts/res/textureListExpr.txt
 	modified:   static/scripts/res/textureListExprRaw.txt
 	modified:   static/status/diff.txt
 	modified:   static/status/status.txt
-	modified:   static/status/status_after_commit.txt
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
 
-	modified:   static/status/status.txt
+	static/Korean/c454_01/c454_01_banner.mtn
+	static/Korean/c503_10/
+	static/Korean/c504_00/affair.exp.json
+	static/Korean/c504_00/joy.exp.json
+	static/Korean/c507_00/
+	static/Korean/c507_01/
+	static/Korean/c507_02/
+	static/Korean/c507_10/
+	static/Korean/c507_88/
+	static/Korean/c508_01/
+	static/Korean/c508_02/
 
+no changes added to commit (use "git add" and/or "git commit -a")
