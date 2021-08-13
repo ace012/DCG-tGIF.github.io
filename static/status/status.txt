@@ -6,54 +6,97 @@ Changes not staged for commit:
   (use "git checkout -- <file>..." to discard changes in working directory)
 
 	modified:   list.txt
-	modified:   static/Korean/c485_01/MOC.c485_01.json
-	modified:   static/Korean/c485_01/_header
-	modified:   static/Korean/c485_01/angry.exp.json
-	modified:   static/Korean/c485_01/c485_01_attack.mtn
-	modified:   static/Korean/c485_01/c485_01_banner.mtn
-	modified:   static/Korean/c485_01/c485_01_hit.mtn
-	modified:   static/Korean/c485_01/c485_01_idle.mtn
-	modified:   static/Korean/c485_01/character.dat
-	modified:   static/Korean/c485_01/idle.exp.json
-	modified:   static/Korean/c485_01/pain.exp.json
-	modified:   static/Korean/c485_01/texture_00.png
-	modified:   static/Korean/c485_10/MOC.c485_10.json
-	modified:   static/Korean/c485_10/_header
-	modified:   static/Korean/c485_10/c485_10_attack.mtn
-	modified:   static/Korean/c485_10/c485_10_hit.mtn
-	modified:   static/Korean/c485_10/c485_10_idle.mtn
-	modified:   static/Korean/c485_10/character.dat
-	modified:   static/Korean/c485_10/confused.exp.json
-	modified:   static/Korean/c485_10/idle.exp.json
-	modified:   static/Korean/c485_10/pain.exp.json
-	modified:   static/Korean/c485_10/sad.exp.json
-	modified:   static/Korean/c485_10/serious.exp.json
-	modified:   static/Korean/c485_10/texture_00.png
-	modified:   static/Korean/c503_10/c503_10_attack.mtn
-	modified:   static/js/live2dsdk/yukimiku.2d.js
+	modified:   static/Korean/c005_00/MOC.c005_00.json
+	modified:   static/Korean/c005_00/_header
+	modified:   static/Korean/c005_00/c005_00_attack.mtn
+	modified:   static/Korean/c005_00/c005_00_idle.mtn
+	modified:   static/Korean/c009_00/MOC.c009_00.json
+	modified:   static/Korean/c009_00/_header
+	modified:   static/Korean/c009_00/c009_00_attack.mtn
+	modified:   static/Korean/c009_00/c009_00_idle.mtn
+	modified:   static/Korean/c009_00/character.dat
+	modified:   static/Korean/c009_00/texture_00.png
+	modified:   static/Korean/c018_00/MOC.c018_00.json
+	modified:   static/Korean/c018_00/_header
+	modified:   static/Korean/c018_00/c018_00_attack.mtn
+	modified:   static/Korean/c018_00/c018_00_idle.mtn
+	modified:   static/Korean/c018_00/character.dat
+	modified:   static/Korean/c018_00/texture_00.png
+	modified:   static/Korean/c126_00/MOC.c126_00.json
+	modified:   static/Korean/c126_00/_header
+	modified:   static/Korean/c126_00/c126_00_attack.mtn
+	modified:   static/Korean/c126_00/c126_00_idle.mtn
+	modified:   static/Korean/c126_00/character.dat
+	modified:   static/Korean/c126_00/texture_00.png
+	modified:   static/Korean/c141_00/MOC.c141_00.json
+	modified:   static/Korean/c141_00/_header
+	modified:   static/Korean/c141_00/c141_00_attack.mtn
+	modified:   static/Korean/c141_00/c141_00_idle.mtn
+	modified:   static/Korean/c141_00/character.dat
+	modified:   static/Korean/c141_00/texture_00.png
+	modified:   static/Korean/c169_00/MOC.c169_00.json
+	modified:   static/Korean/c169_00/_header
+	modified:   static/Korean/c169_00/c169_00_attack.mtn
+	modified:   static/Korean/c169_00/c169_00_idle.mtn
+	modified:   static/Korean/c169_00/character.dat
+	modified:   static/Korean/c169_00/texture_00.png
+	modified:   static/Korean/c200_00/MOC.c200_00.json
+	modified:   static/Korean/c200_00/_header
+	modified:   static/Korean/c200_00/c200_00_attack.mtn
+	modified:   static/Korean/c200_00/c200_00_idle.mtn
+	modified:   static/Korean/c200_00/character.dat
+	modified:   static/Korean/c200_00/texture_00.png
+	modified:   static/Korean/c205_00/MOC.c205_00.json
+	modified:   static/Korean/c205_00/_header
+	modified:   static/Korean/c205_00/c205_00_attack.mtn
+	modified:   static/Korean/c205_00/c205_00_idle.mtn
+	modified:   static/Korean/c205_00/character.dat
+	modified:   static/Korean/c205_00/texture_00.png
+	modified:   static/Korean/c318_00/MOC.c318_00.json
+	modified:   static/Korean/c318_00/_header
+	modified:   static/Korean/c318_00/c318_00_attack.mtn
+	modified:   static/Korean/c318_00/c318_00_hit.mtn
+	modified:   static/Korean/c318_00/c318_00_idle.mtn
+	modified:   static/Korean/c318_00/character.dat
+	modified:   static/Korean/c318_00/confused.exp.json
+	modified:   static/Korean/c318_00/idle.exp.json
+	modified:   static/Korean/c318_00/irritation.exp.json
+	modified:   static/Korean/c318_00/serious.exp.json
+	modified:   static/Korean/c318_00/sigh.exp.json
+	modified:   static/Korean/c318_00/texture_00.png
+	modified:   static/Korean/c353_00/MOC.c353_00.json
+	modified:   static/Korean/c353_00/_header
+	modified:   static/Korean/c445_01/MOC.c445_01.json
+	modified:   static/Korean/c445_01/_header
 	modified:   static/scripts/res/textureList.txt
 	modified:   static/scripts/res/textureListExpr.txt
 	modified:   static/scripts/res/textureListExprRaw.txt
 	modified:   static/status/diff.txt
 	modified:   static/status/status.txt
-	modified:   viewerKR.html
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	static/Korean/c485_01/smile.exp.json
-	static/Korean/c485_10/angry.exp.json
-	static/Korean/c485_10/cry.exp.json
-	static/Korean/c509_01/
-	static/Korean/c509_02/
-	static/Korean/c509_10/
-	static/Korean/c509_87/
-	static/Korean/c509_88/
-	static/Korean/c509_89/
-	static/Korean/c510_01/
-	static/Korean/c510_02/
-	static/Korean/c510_10/
-	static/Korean/sc485_01/
-	static/Korean/sc486_01/
+	static/Korean/c005_00/c005_00_hit.mtn
+	static/Korean/c009_00/c009_00_hit.mtn
+	static/Korean/c018_00/c018_00_hit.mtn
+	static/Korean/c120_00/
+	static/Korean/c126_00/c126_00_hit.mtn
+	static/Korean/c141_00/c141_00_hit.mtn
+	static/Korean/c169_00/c169_00_hit.mtn
+	static/Korean/c200_00/c200_00_hit.mtn
+	static/Korean/c205_00/c205_00_hit.mtn
+	static/Korean/c318_00/smile.exp.json
+	static/Korean/c353_00/c353_00_hit.mtn
+	static/Korean/c417_10/
+	static/Korean/c445_01/c445_01_banner.mtn
+	static/Korean/c511_01/
+	static/Korean/c511_02/
+	static/Korean/c512_01/
+	static/Korean/c512_02/
 
+
+It took 5.32 seconds to enumerate untracked files. 'status -uno'
+may speed it up, but you have to be careful not to forget to add
+new files yourself (see 'git help status').
 no changes added to commit (use "git add" and/or "git commit -a")
